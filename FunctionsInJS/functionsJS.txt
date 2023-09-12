@@ -1,0 +1,35 @@
+Understanding functions is how you understand JavaScript
+
+Goals -
+1. Learn how JavaScript treats functions as first-class data types
+- Most programming languages do not treat functions the same as
+  other data types 
+- JavaScript functions are considered first-class because theay are
+  treated like any other data type
+- In JavaScript a function is just an object (special kind)
+
+Functions in JavaScript are first-class because of the following 3
+features:
+- Functions can be passed as arguments to other functions
+- The return value of a function can be another function
+- A function can be assigned to a variable
+
+2. Introduce callback functions
+JavaScript is a single-threaded language - a thread represents a 
+process, so in other words, a single process that executes one command
+at a time. 
+So how can we work around this? With Callback Queues 
+(Alerts, Timers & Intervals)
+
+Callstack = JavaScript to-do list / task manager
+3. Explore a pattern for using callbacks to write declarative code
+4. Introduce 'Anonymous' functions
+An anonymous function is a name-less function; it can be passed to a
+variable, but more often than not, we pass them to other functions
+
+5. Understand the difference between synchornous and asynchronous 
+    code
+6. Learn about setTimeout and setInterval
+- setTimeout: It's quite common to write code that we want to be 
+    executed after a specific amount of time
+

@@ -1,0 +1,28 @@
+JavaScript Must Knows -
+1. Declaring variables: 
+    keyword    |    Can Reassign    |    Can Redeclare    |    Scope Rules
+      var               yes                   yes                function
+      let               yes                   no                 block
+      const             no                    no                 block
+
+2. Conditional Logic:
+
+3. Logical Operators:
+
+5. Primitive Data Types:
+
+6. Numbers:
+
+7. Strings:
+
+8. Booleans:
+
+9. Iteration:
+
+10. Arrays:
+
+11. Objects:
+
+12. Arrays and Objects:
+
+13. Functions:

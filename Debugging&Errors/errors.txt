@@ -1,0 +1,11 @@
+Error Handling -
+    1. Syntax Error: Occurs when JavaScript is unable to parse
+       certain Syntax
+    2. Reference Error: Occurs when JavaScript tries to access a 
+       variable that is not aware of - scope issue most likely
+    3. TypeError: Occurs when JavaScript runs an invalid expression
+       on the wrong type
+       
+Throwing Errors -
+
+Throwing Custom Errors -

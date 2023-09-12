@@ -1,0 +1,23 @@
+Goals -
+1. Define three of the most common errors in JavaScript and
+   how to debug them
+2. Examine the Chrome Dev Tools for debbugging
+3. Catch errors using try/catch/finally blocks
+4. Thros errors with specific messages 
+
+Most common errors -
+Debbugging, Syntax Errors, Reference Errors, TypeError
+
+Anatomy of an error message -
+
+JavaScript/Chrome Debugger - 
+1. Step
+2. Step Over
+3. Step Into
+4. Step Out
+5. Scope
+
+Avoid Bugs -
+1. Plan First 
+2. Keep it simple
+3. Understand Tools and Methods 
