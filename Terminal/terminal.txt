@@ -1,0 +1,87 @@
+What is a terminal?
+A terminal is an application that gives us command line interface (or CLI)
+to interact with the computer. Text-based interface
+
+What is shell?
+The shell is the program which actually processes commands and returns output.
+Most shells also amnage foregriund and background processes, command history 
+andcommand line editing.
+These features (and many more) are standard in bash, the most common shell in
+modern linux systems.
+
+What is a terminal?
+A terminal refers to wrapper program which runs a shell.
+Decades ago, this was a physical device consisting of little more than a monitor
+and keyboard.
+As unix/linux systems addes better multiprocessing and windowing systems, this 
+terminal concept was abstracted into sofware.
+
+In terminal, all files and folders begin at the root directory. The root
+directory is noted by a '/'.
+
+- Root directory:
+    Inside the root directory are essential files/folders that your machine needs,
+    but we do not modify the files and folders in the root directory often
+- 'Users' folder:
+    Inside the root directory, we have a folder called 'Users' which contains all 
+    of the user accounts on your computer. If you move into the directory for your
+    user account, you will be in the 'home' directory, which is denoted by '~'
+
+
+Introduction to Windows Subsystem for Linux (WSL) -
+WSL allows the user to install and run Linux within Windows
+
+Linux commands -
+- explorer.exe .: Interact and access linux files/folders from windows terminal
+- pwd: "Print Working Directory", will display the absolute path and let you know
+        what current directory is being worked on
+- cd: "Change Directory", will move the user to de declared path/name
+- cd ~: Will move the user to their respective home directory 
+- cd ..: revert one level of directory 
+- ls: "List", will list all 'visible' files in current directory
+- ls -a: "List All", will list all files in current directory (visible or otherwise)
+- ls -l: Will list all 'visible files with file permissions, link number, owner name, 
+        name of the group it belongs to, size in bytes , a timestamp and file name
+- ls -al: Same as last point, but for all files (visible or otherwise)
+- cd /mnt/c: Interact and access windows files/folders from linux server side
+- mkdir: "Make Directory", command to create a folder 
+- touch: Command to create a file [file_name + file_typ]. If file already exists, it
+        will only change the file's meta data
+- cat: "Concatenate", alllows the user to display the contents of a file without 
+        having to open it - view in terminal
+- echo: Command will simply write the typed text in the terminal
+- >: "Redirect", will redirect the output from the command on the left side into the
+        file on the right hand side -> [echo "" > file_name] will fill in the file, 
+        overwritting all the previous contents 
+- rm: "Remove", command to remove a file 
+- rmdir: "Remove Directory", command to remove (empty) directories 
+- rm -rf: Command to remove folder with all contents, regardless of their user
+        permission
+- open: "Open", will open a file or directory 
+- .: Reference to current directory 
+- mv: "Move", to move files and folders [mv test.txt ../] - This command can also be
+        used to rename a file [mv test.txt newTest.txt]
+- cp: "Copy", command to copy a file [cp PATH_TO_ORIGINAL_FILE PATH_TO_COPIED_FILE]
+- cp -r: Command to copy an entire directory to another
+
+Linux Shortcuts -
+- Command/Ctrl + A: Move to beginnig of line
+- Command/Ctrl + E: Move to the end of the line
+- Command/Ctrl + W: Delete the word up to where the cursor is 
+- Command/Ctrl + U: Delete an entire line
+- Option/Alt + left/right: Jump between words
+
+
+A path is simply the way to reach a fila or a folder; it's like an address for the
+file or folder you're trying to reach.
+If you use 'cd' with an absolute path you can move from anywhere to anywhere, but,
+if you use 'cd' with a relative path the file/folders must be located relative to 
+where you're located.
+
+Flags -
+Flags can change and even enhance commands and are added using a '-' after the 
+command. Flags are usually represented by single uppercase and lowercase letters.
+
+Using the manual to learn more -
+If you ever want to learn more about a terminal command you can use the 'man' 
+command followed by the terminal command to see a manual on the command
