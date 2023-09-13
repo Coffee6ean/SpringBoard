@@ -1,15 +1,23 @@
-What is a terminal?
+1. What is Bash?
+Bash is the shell, or command language interpreter, for the GNU operating 
+system. The name is an acronym for the ‘Bourne-Again SHell’, a pun on 
+Stephen Bourne, the author of the direct ancestor of the current Unix shell sh,
+which appeared in the Seventh Edition Bell Labs Research version of Unix.
+
+While the GNU operating system provides other shells, including a version
+of csh, Bash is the default shell.
+
+2. What is shell?
+The shell is the program which actually processes commands and returns output.
+Most shells also manage foreground and background processes, command history 
+and command line editing.
+These features (and many more) are standard in 'bash', the most common shell in
+modern linux systems.
+
+3. What is a terminal?
 A terminal is an application that gives us command line interface (or CLI)
 to interact with the computer. Text-based interface
 
-What is shell?
-The shell is the program which actually processes commands and returns output.
-Most shells also amnage foregriund and background processes, command history 
-andcommand line editing.
-These features (and many more) are standard in bash, the most common shell in
-modern linux systems.
-
-What is a terminal?
 A terminal refers to wrapper program which runs a shell.
 Decades ago, this was a physical device consisting of little more than a monitor
 and keyboard.
