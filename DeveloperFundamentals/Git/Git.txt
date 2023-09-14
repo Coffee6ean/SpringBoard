@@ -1,0 +1,14 @@
+Git -
+
+1. What is Git?
+Git is a tool that allows developers to track versions of their code over 
+time.
+It does this by creating 'snapshots' of the current state of the code base
+whenever you tell it to - this is what makes Git essential when collaborating
+with other developers to ensure the previous 'snapshots' of the code can be
+revisited if necessary.
+
+'VCS' is a common acronym that stands for Version Control System. Git is a 
+VCS because it lets you create different versions of your code and easily
+swap back and forth between different versions 
+Git and GitHub are different
