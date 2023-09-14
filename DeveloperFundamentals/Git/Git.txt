@@ -1,5 +1,4 @@
 Git -
-
 1. What is Git?
 Git is a tool that allows developers to track versions of their code over 
 time.
@@ -12,3 +11,26 @@ revisited if necessary.
 VCS because it lets you create different versions of your code and easily
 swap back and forth between different versions 
 Git and GitHub are different
+
+Once you have Git installed, you need to "initialize" a repository with Git 
+before you can start using it - for this, we run 'git init' inside of a folder;
+this is equivalent of generating an instance of Git within that folder, and the
+repo will store the different snapshots for all changes made
+
+
+Git commands -
+- git init: To initialize a git repo in a directory
+- git status: Command to check-up on a git repository for a directory. If it 
+        prompts 'fatal: not a git repository ...: .git', then that current 
+        directory doesn't have a git repo instance
+- rm -rf .git: Command to delete git repo instance of current directory
+- git add: Command used to save our modified files so that they will be 
+        included in the next commit
+- git commit: Once we are satisfied with the work of a file in our staging
+        area we commit it to the local repository. We include a commit message 
+        that summarizes the changes that were made in that commit:
+        [git commit -m "summary of this commit"]
+    * A commit is still local until we push it to a remote repository
+- git push:
+- git log: Command to see a log of all commits made to the repo
+- git diff: Command to display what's been changed among the files

@@ -1,0 +1,140 @@
+coffee_6ean@DESKTOP-U6K7BVH:~$ ls
+CSS  First  HTML  Images  Java  JavaScript  Linux
+coffee_6ean@DESKTOP-U6K7BVH:~$ mkdir learn_git_again
+coffee_6ean@DESKTOP-U6K7BVH:~$ cd learn_git_again/
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ touch third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/coffee_6ean/learn_git_again/.git/
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git add third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   third.txt
+
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git commit -m "adding third.txt"
+[master (root-commit) da9d256] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git log
+commit da9d2567ccc62ae5ec103ea7abdd79351337483f (HEAD -> master)
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:27:31 2023 -0600
+
+    adding third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ touch fourth.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git add fourth.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git commit -m "adding four
+th.txt"
+[master f2afcdd] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ ls
+fourth.txt  third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ rm third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ ls
+fourth.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git log
+commit f2afcddadd5c19dca9942d0af168ba967124dc3c (HEAD -> master)
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:28:16 2023 -0600
+
+    adding fourth.txt
+
+commit da9d2567ccc62ae5ec103ea7abdd79351337483f
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:27:31 2023 -0600
+
+    adding third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git commit -m "removing th
+ird.txt"
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git add .
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git commit -m "removing third.txt"
+[master 339e170] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git log
+commit 339e170151fab19aef7bbb4fdaf7c1f499cdebd6 (HEAD -> master)
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:29:17 2023 -0600
+
+    removing third.txt
+
+commit f2afcddadd5c19dca9942d0af168ba967124dc3c
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:28:16 2023 -0600
+
+    adding fourth.txt
+
+commit da9d2567ccc62ae5ec103ea7abdd79351337483f
+Author: Coffee6ean <mejiapazalfredo@gmail.com>
+Date:   Wed Sep 13 19:27:31 2023 -0600
+
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git config --global core.pager 'cat'
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ man git-config
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+coffee_6ean@DESKTOP-U6K7BVH:~/learn_git_again$
