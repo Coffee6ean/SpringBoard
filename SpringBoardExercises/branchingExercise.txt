@@ -1,0 +1,126 @@
+Part 1- 
+
+- What 'git' command creates a branch? 
+    git branch branch_name
+- What is the difference between a fast-forward and recursive merge?
+    Fast forward is when git can chronologically tell which commits come first. And 
+    recursive will me the method when git can't tell the chronological order
+- What 'git' command changes to another branch?
+    git checkout
+- What 'git' command deletes a branch?
+    git branch -d branch_name
+- How do merge conflicts happen?
+    when two branches try to merge commits to a same file
+
+Part 2-
+**Practice with fast forward and recursive merges! Make a branch and add and
+commit onto it and merge it back into master.
+
+Try to create your own merge conflict by modifying the same file on two 
+separate commits on two separate branches.**
+
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git branch
+  add-css
+* master
+  teal-bg
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout teal-bg
+Switched to branch 'teal-bg'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout -b red-bg
+Switched to a new branch 'red-bg'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ code .
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git status
+On branch red-bg
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git add style.css
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git commit -m "Adding red background
+ to app"
+[red-bg 1fc633c] Adding red background to app
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout master
+Switched to branch 'master'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ code .
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git add .
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git commit -m "Adding black backgrou
+nd to app"
+[master 6caee91] Adding black background to app
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git branch
+  add-css
+* master
+  red-bg
+  teal-bg
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git merge red-bg
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Automatic merge failed; fix conflicts and then commit the result.
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git add .
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git commit -m "Fixed conflict. Black will be the bg color"
+[master 5479318] Fixed conflict. Black will be the bg color
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git branch
+  add-css
+* master
+  red-bg
+  teal-bg
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout -b add-text
+Switched to a new branch 'add-text'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ ls
+app.js  index.html  style.css
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ touch text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ ls
+app.js  index.html  style.css  text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ echo "Hello World!" > text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ cat text.txt
+Hello World!
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout master
+Switched to branch 'master'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git merge add-text
+Already up to date.
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout add-text
+Switched to branch 'add-text'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git status
+On branch add-text
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        text.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git add .
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git commit -m "Adding new text file"
+[add-text 980573a] Adding new text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git checkout master
+Switched to branch 'master'
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ git merge add-text
+Updating 5479318..980573a
+Fast-forward
+ text.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$ ls
+app.js  index.html  style.css  text.txt
+coffee_6ean@DESKTOP-U6K7BVH:~/Linux$
