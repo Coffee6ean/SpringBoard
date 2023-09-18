@@ -52,6 +52,33 @@ not going to sync up properly. This will result in a merge conflict.
 Git can't know which commit to go with, so a human will be required to make a
 decision
 
+GitHub -
+GitHub is a web-based Git repository hostimg service. Simply put is a tool that
+enables collaboration by hosting shared Git repositories that teams of developers 
+can all contribute to.
+While GitHub uses Git, the functionality ot provides is very different from Git.
+In short, Git is a Version Control System. GitHub is an online platform for hosting
+and sharing code, text files and even more complex file formats.
+
+Why use GitHub?
+1. It provides a great  way for you to store your code in a remote location
+2. It's a fantastic way to collaborate with other developers both privately and 
+   publicly
+
+What is a remote?
+It's a nickname for a URL where your respository lives. Instead of typing/remembering
+the entire URL, we give it a nickname - by defualt this nickname is 'origin'
+
+README.md file -
+Markdown syntax
+
+GitHub Pages -
+Deploy scripts through the html (ussually synced to the 'master' branch)
+Create a static http for your CSS, HTML and JavaScript codes so that other may access the
+link and see your projects. 'Static' bec uase you are not implementing DB's or backend -
+pure client side stuff
+Settings > GitHub Pages 
+
 Git commands -
 - git init: To initialize a git repo in a directory
 - git status: Command to check-up on a git repository for a directory. If it 
@@ -71,7 +98,7 @@ Git commands -
 - git diff: Command to display what's been changed among the files
 - git branch: Command will list all branches and highlight the one that's
         that's currently on. To create a new branch [git branch branch_name]
-- git checkout branch_name: Command to change branches. 
+- git checkout branch_name: Command to change branches
         [git checkout -b branch_name] will create and change to a new branch
 - git branch -d branch_name: Command to delete a branch. In this instance, 
         commits can be saved if they are merged to masater before delition, with
@@ -79,3 +106,15 @@ Git commands -
         be lost
 - git merger branch_name: Command to bring all commits for the declared branch
         to our standing branch
+-> git remote add origin remote_repo_url: Add a remote repo to local git 
+        instance. [git remote -v], check for current declared remote repo url
+-> git push -u origin master: Command to send our code from local repository to
+        our remote repository (which was aliased to 'origin'). The '-u' flag
+        allows us in the future to only have to type 'git push' instead of 
+        'git push origin master'
+-> git push origin branch_name: Command to add new branch to remote repo
+-> git clone remote_repo_url: To clone and initialize a remote repo in local
+        directory. In a cloned repo I can modify and add commits but I will not
+        be able tu push them since im not the repo owner
+-> git pull: pull all changes and commits from remote repo to local repo.
+        [git pull origin branch_name]
