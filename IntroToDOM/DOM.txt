@@ -1,0 +1,75 @@
+Document Object Model (DOM) -
+It is the programming interface for HTML. A representation of our HTML that can
+be accessed using JavaScript.
+Its the browsers job to turn the tags into interactive visuals.
+
+How does it get created?
+When a web page is loaded, the browser creates the DOM for that specific page.
+This allows for the creation of dynamic web pages where users can interact with
+the page.
+
+The structure of the DOM uses somthing called a tree, where the topmost node is
+the 'document' object: console.dir(document)
+     ________________
+    |    document    |
+     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+            |
+       _____˅______        
+      |    html    |
+       ¯¯¯¯¯¯¯¯¯¯¯¯
+            |̶ ̶̶̶̶̶̶̶̶̶̶̶ ̶ ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ |
+       _____˅______              _____˅______                ________
+      |    head    |            |    body    | ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶>|   h1   |
+       ¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯       |        ¯¯¯¯¯¯¯¯
+            | ̶̶̶̶̶̶̶̶ ̶ ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ |                       |        ________
+       _____˅______    _____˅_______                 ̶ ̶ ̶ ̶ ̶ ̶ ̶>|   ul   | 
+      |    link    |  |    title    |               |        ¯¯¯¯¯¯¯¯
+       ¯¯¯¯¯¯¯¯¯¯¯¯    ¯¯¯¯¯¯¯¯¯¯¯¯¯                |        __________
+                                                     ̶ ̶ ̶ ̶ ̶ ̶ ̶>|   form   |
+                                                             ¯¯¯¯¯¯¯¯¯¯
+                                                                  | ̶̶̶̶̶̶̶̶ ̶ ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ |       
+                                                             _____˅______    ____˅______           
+                                                            |    input   |  |   button  |  
+                                                             ¯¯¯¯¯¯¯¯¯¯¯¯    ¯¯¯¯¯¯¯¯¯¯¯
+The DOM keeps track of what is on the page and how it's related - so it creates
+different objects to model that. The DOM is an object representation (JavaScript),
+and its constructed by the browser when it loads
+
+The 'Document' object represents the web page that has been loaded; ist acts as
+the starting point for access to the DOM. Things we can do:
+1. Finding elements
+    To access the DOM, we make use of the document object. This object has 
+    this object has properties and functions that we use to access our HTML
+    elements which we can manipulate with JavaScript.
+    We get back a special object called an HTMLElement. The exact kind of object
+    we get back will depend on what we select
+2. Making new elements
+3. Updating elements
+4. Changing properties on elements
+5. Listening for events (like clicks)
+
+DOM JS Commands - //document.
+- getElementById: Accepts a string which is the name of an 'id' in the DOM. It
+    find the first matching id.
+    -> let btn = document.getElemenById("submit");
+- getElementsByTagName: Accepts a string which is the name of an element in the
+    DOM. It returns a list of all the elements that match the string passed to
+    the function.
+    -> let images = documnet.getElementsByTagName("img");
+- getElementsByClassName: Accepts astring whcih is the name of an element in the
+    DOM. It returns a list of all of the elements that have a class attribute,
+    which matches the string passed to the function.
+- querySelector: Accepts a string which is a valid CSS selector. It returns the 
+    first element that matches the CSS selector passed to the function
+    -> document.querySelector("#main")
+    -> document.querySelector("h2.section-heading")
+- querySelectorAll: Accepts a string which is a valid CSS selector. It returns 
+    all the elements that matches the CSS selector passed to the function
+    -> document.querySelectorAll("li")
+    -> document.querySelectorAll("ul .nav-links")
+
+* These methods can be used within HTML elements
+    -> const form = document.querySelector("form")
+    -> form.querySelectorAll("button")
+    => Returns all elements classified as 'button' only within the context of
+       the 'form'
