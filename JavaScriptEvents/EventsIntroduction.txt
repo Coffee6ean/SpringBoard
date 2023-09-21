@@ -1,0 +1,76 @@
+What is an event?
+DOM events are "actions" that occur as a result of something the user or the 
+browser does (click, scroll, type, load, etc.).
+We can use JavaScript to execute code when these kinds of "events" happen.
+This is what most browser based JS is about - this is commonly called Event Driven
+Programming
+
+For more info: https://developer.mozilla.org/es/docs/Web/Events
+
+Event Listeners - 
+Inline event listener:
+The least preferred method since it clusters the HTML
+    -> <h1 onclick="runClickHeader()">Hello World</h1>
+    -> function runClickHeader() {
+        console.log("You just clicked the h1 element")
+       }
+
+JS onclick:
+Limited since you can only set/overrite the 'onclick' property. This means it is
+not able to perform/listen to multiple events - it will only listen to the last one
+    -> const h1 = document.querySelector("h1");
+    -> h1.onclick = function() {
+        console.log("You just clicked the h1 element");
+       }
+
+addEventListener:
+Preferred method isnce it's easier to later on remove an 'addEventListener' if we 
+initially added it with this method - better adjustment lead to more scalability
+    -> const h1 = document.querySelector("h1");
+    -> h1.addEventListener("click", function() {
+        console.log("You just clicked the h1 element");
+       });
+
+Event Loading - 
+If you are trying to access properties in the DOM, before the web page has loaded - 
+it won't work. This becomes an issue if you put <script> tags in the <head> before the 
+DOM has loaded.
+Thankfully we have an event we can listen for to handle this, it's called 'DOMContentLoaded'
+    -> document.addEventListener("DOMContentLoaded", function() {
+        //place your code inside here
+       })
+
+Event Object -
+Accessing the Event Object:
+Inside of the callback to addEventListener, we get access to a special object as a 
+parameter - the event object
+    -> const h1 = document.querySelector("h1");
+    -> h1.addEventListener("click", function(event) {
+        console.log(event);
+       });
+
+What is inside of the Event Object?
+- target: what element is the target event
+- pageX/pageY: where on the page did this event occur?
+- key: what was pressed that triggered this event?
+- preventDefault(): a function used to prevent the default behaviour of the event
+
+Form Submission - 
+The default action from the form is to refresh the web page
+    -> <form>
+        Name: <input id="firstName" type="text">
+        <button>Add your name</button>
+       </form>
+    -> const formElement = document.querySelector("form");
+    -> formElement.addEventListener("submit", function(event) {
+        console.log("you just submitted the form");
+       })
+
+If we want to stop defualt behaviour of an event, we need to use the special 
+'event.preventDefault()' method:
+    -> const formElement = document.querySelector("form");
+    -> formElement.addEventListener("submit", function() {
+        event.preventDefault();
+        console.log("you just submitted the form");
+       })
+
