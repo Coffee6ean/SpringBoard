@@ -137,6 +137,9 @@ function init() {
         if(e.target.tagName.toLowerCase() === "button") {
             (e.target.outerText.toLowerCase() === "delete") ? 
                 removeTask(e.target) : editTask(e.target);
+        } else {
+            e.target.classList.toggle("completed");
+            console.log(e.target.classList);
         }
         storeHTMLElements();
     });

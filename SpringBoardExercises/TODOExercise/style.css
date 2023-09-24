@@ -92,8 +92,9 @@ main {
     margin: 0 auto;
 }
 
-li.completed {
+.actions input[class$="completed"] {
     text-decoration: dashed;
+    color: green;
 }
 
 .task-list {
