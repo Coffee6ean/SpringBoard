@@ -1,0 +1,68 @@
+Intro to Local Storage -
+
+https://carbon.now.sh/
+
+What is localStorage?
+'localStorage' is a mechanisim for storing information in the browser for a specific
+domain. When you read more about localStorage you will also hear about something
+called 'sessionStorage'.
+
+localStorage vs. sessionStorage:
+- Data stored in localStorage has no expiration time
+- Data stored in sessionStorage gets cleared when the browsing session ends
+
+Modifying localStorage-
+
+The most important thing to remember is that all of your keys in localStorage or 
+sessionStorage must be 'strings'.
+localStorage stores everything as strings, so it's just good to get in the habit of 
+setting your keys as strings to avoid confusion.
+
+Setting an item in localStorage: We do this using the 'setItem' method
+    -> localStorage.setItem("firstName", "Ben");
+    -> localStorage.setItem("favoriteNumber, 17);
+    -> localStorage.setItem("hasChickens", true);
+
+Retrieving an item in localStorage: To retrieve we use the 'getItem' method (only
+passing the key)
+    -> localStorage.getItem("firstName");
+
+Clearing localStorage: To delete a key we use the 'removeItem' function
+    -> localStorage.removeItem("firstName");
+
+To clear everything form localStorage we use the clear function:
+    -> localStorage.clear();
+
+
+Adding Ojects to localStorage - 
+When we get the friends key from localStorage, we don't have an array anymore - we
+have a string. Remember, when dealing with localStorage, everything gets converted 
+into a string.
+IN order to get back our original data type, we need to convert this array to a special
+string format called JSON.
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy
+for humans to read and write. It is easy for machines to parse and generate
+
+Working with JSON in the browser:
+JavaScript has a built-in JSON object, and on this object are two methods to convert
+JavaScript data into JSON, and to parse JSON strings into JavaScript:
+- JSON.stringify: is used to convert JavaScript to JSON (or stringify)
+- JSON.parse: parses a string as JSON
+
+Using these two methods allows us to preserve the intended data structure when it is
+something other than a string
+    -> const friends = ["Lane", "Hayden", "Jessie"];
+       //The JSON.stringify function
+       // converts the friends array into a JSON string
+       localStorage.setItem("friends", JSON.stringify(friends));
+       //JSON.parse converts the JSON string
+       // back into JavaScript(in this case, a valid array)
+       JSON.parse(localStorage.getItem("friends"));
+
+Recap -
+- localStorage is useful for storing information in the browser (not to be replaced for 
+a standar server with a database)
+- To store objects, use JSON.stringify when setting and JSON.parse when retrieving
+- If you just wnat to store information for the time a tab is open, use sessionStorage
+(as soon as that window closes, the tab is gone, that data is lost)

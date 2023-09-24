@@ -74,3 +74,90 @@ If we want to stop defualt behaviour of an event, we need to use the special
         console.log("you just submitted the form");
        })
 
+
+Key Events -
+Key Press:
+    -> <!DOCTYPE html>
+       <html>
+       <body>
+        <h1>Press the "a" key</h1>
+        <script src="script.js></script>
+       </body>
+       </html>
+    -> document.addEventListener("keypress", function(event) {
+        if(event.key) {
+            alert("you just pressed the 'a' key");
+        }
+       }); 
+
+Multiple Events -
+
+Event Delegation:
+The event listener only works for elements currently on the page. There are two ways
+we can fix this:
+1. Adding the event listener when we create elements
+    -> const form = documnet.querySelector("form");
+       const friendList = document.querySelector("#friend-list");
+
+       form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const newFriendInput = document.querySelector("#first-name");
+        const newLi = document.createElement("li");
+        const newButton = document.createElement("button");
+
+        newLi.innerText = newFriendInput.value;
+        newButton.innerText = "Remove";
+
+        newButton.addEventListener("click", function(event) {
+            event.target.parentElement.remove();
+        });
+
+        newLi.append(newButton);
+        friendList.append(newLi);
+        form.reset();
+       })
+
+    *This will work, but it's not the most efficient approach. We're adding an event 
+    listener for every single button inside of each <li>
+
+2. Event Delegation: The idea behind event delegation is that we make a parent element
+    the "delegate" - in our case is the <ul>. We attach a single event listener on the
+    parent or delegate element and them if the event happens inside a certain child
+    element, we can access that child element using event.target
+    -> friendList.addEventListener("click", function(event) {
+        if(event.target.tagName === "BUTTON") {
+            event.target.parentElement.remove();
+        }
+       });
+
+Data Attributes -
+When creating elements and HTML pages it's very common that you might want to add/store
+some metadata or additional information about elements. These ara not things that user
+should see, but accessible information in CSS and JavaScript.
+
+Instead of placing this in an 'id' or 'class', we can create custom attributes called
+data attributes. These attributes start with 'data-' and then anything you would like.
+You can read them easily in CSS and JavaScript.
+    -> <!DOCTYPE html>
+       <html>
+       <body>
+        <ul id="cars">
+            <li></option>
+            <li data-model="model 3" data-year="2014">Tesla</option>            
+            <li data-model="crv" data-year="2017">Honda</option>            
+            <li data-model="focus" data-year="2011">Ford</option>
+            <li data-model="prius" data-year="2015">Toyota</option>
+        </ul>
+        <script src="script.js"></script>
+       </body>
+       </html>
+    -> const ul = document.querySelector("ul")
+       ul.addEventListener("click", function(event) {
+        const selectedElement = event.target;
+        console.log("see all data attributes", selectedElement.dataset);
+        console.log(
+            "see one data attribute", 
+            selectedElement.getAttribute("data-model")
+        );
+       });
+
