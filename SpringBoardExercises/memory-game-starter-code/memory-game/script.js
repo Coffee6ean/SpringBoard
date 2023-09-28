@@ -13,9 +13,7 @@ const COLORS = [
   "purple"
 ];
 
-// here is a helper function to shuffle an array
-// it returns the same array with values shuffled
-// it is based on an algorithm called Fisher Yates if you want ot research more
+// Shuffle the COLORS array and store it in shuffledColors
 function shuffle(array) {
   let counter = array.length;
 
@@ -38,9 +36,7 @@ function shuffle(array) {
 
 let shuffledColors = shuffle(COLORS);
 
-// this function loops over the array of colors
-// it creates a new div and gives it a class with the value of the color
-// it also adds an event listener for a click for each card
+// Create div elements for each color and add them to the game container
 function createDivsForColors(colorArray) {
   for (let color of colorArray) {
     // create a new div
@@ -54,7 +50,9 @@ function createDivsForColors(colorArray) {
 
 function startGame() {
   createDivsForColors(shuffledColors);
+  // Store the current state in local storage
   localStorage.setItem("dataHTML", gameContainer.innerHTML);
+  // Load the game state from local storage
   gameContainer.innerHTML = localStorage.getItem("dataHTML");
 }
 
@@ -71,15 +69,6 @@ function displayHTMLElements() {
   gameContainer.innerHTML = localStorage.getItem("dataHTML");
 }
 
-function test() {
-  var result = false;
-  console.log("result: " + result);
-  setTimeout(function() {
-    result = true;
-    console.log("result: " + result);
-  }, 5000)
-}
-
 function init() {
   if(localStorage.getItem("dataHTML") === null) {
     startGame();
@@ -87,97 +76,92 @@ function init() {
   
   //--- local Variables ---//
   const test = document.querySelector("div");
-  var next = false;
-  var reveal = 0;
   var pairsFound = 0;
 
   //--- Functions ---//
   function turnToWhite(event) {
     event.style.background = "white";
     event.classList.remove("find-match");
-    reveal--;
   }
 
   function turnToColor(event) {
     event.style.background = event.className;
     event.classList.add("find-match");
-    reveal++;
   }
 
-  function resetCard(card) {
+  function resetCards(cardOne, cardTwo) {
     setTimeout(function() {
-      turnToWhite(document.querySelector(card));
+      turnToWhite(document.querySelector(cardOne));
+      turnToWhite(document.querySelector(cardTwo));
     }, 1500); 
-
-    return true;
   }
 
   function keepCards() {
     pairsFound++;
-    //console.log("Great. Pair found: " + pairsFound);
+    // Store the current state in local storage
     storeHTMLElements();
-
-    return true;
   }
-
-  function handleCardClick(event) {
-    if(!event.target.className.includes("find-match")) {
-      turnToColor(event.target)
-    } else {
-      turnToWhite(event.target);
-    }
-
-    return event.target.className;
-  }
-
+  
   function compareSelectedCards() {
+    // Disable card clicks during comparison
+    disableCardClick();
     var cardOne = "." + cards[0].replace(" ", ".");
     var cardTwo = "." + cards[1].replace(" ", ".");
     if(cardOne == cardTwo) {
-      next = keepCards();
+      // If the cards match, keep them revealed
+      keepCards();
     } else {
-      resetCard(cardOne);
-      next = resetCard(cardTwo);
+      // If they don't match, reset their colors
+      resetCards(cardOne, cardTwo);
     }
 
     cards = [];
-  }
-
-  function disableCardClick() {
-    console.log("Click disabled");
-    test.removeEventListener("click", (e) => {});
-  }
-
-  function enableCardClick() {
-    test.addEventListener("click", (e) => {
-      if(!(e.target.id === "game")) {
-        let card = handleCardClick(e);
-        cards.push(card);
-
-        if(reveal % 2 == 0 && reveal > 0) {
-          compareSelectedCards();
-        }
-      }
-    });
+    // Re-enable card clicks after a delay
+    setTimeout(enableCardClick, 1500);
   }
 
   //--- Events ---//
-  if(pairsFound == COLORS.length/2) {
-    alert("Congratulations, you won!!");
-    setTimeout(function() {
-      restartGame();
-    }, 1500);
+  function disableCardClick() {
+    // Remove the event listener temporarily to disable card clicks
+    test.removeEventListener("click", handleClick);
   }
+
+  function enableCardClick() {
+    // Re-add the event listener to enable card clicks
+    test.addEventListener("click", handleClick);
+
+    if(pairsFound == COLORS.length/2) {
+      // If all pairs are found, display a message and restart the game
+      alert("Congratulations, you won!!");
+      setTimeout(function() {
+        restartGame();
+      }, 1500);
+    }
+  }
+
+  function handleClick(event) {
+    if (!event.target.className.includes("find-match")) {
+      // If a card is clicked, reveal it
+      turnToColor(event.target);
+      cards.push(event.target.className);
+
+      if (cards.length == 2) {
+        // If two cards are revealed, compare them
+        compareSelectedCards();
+      }
+    } else {
+      // If a revealed card is clicked again, hide it
+      turnToWhite(event.target);
+      cards.pop();
+    }
+  }
+
+  // Enable card clicks and display the game elements
   enableCardClick();
   displayHTMLElements();
 }
 
-// when the DOM loads
+// Initialize the game when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
   init();
-})
-
-
-
-
-
+});
