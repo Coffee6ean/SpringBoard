@@ -1,4 +1,7 @@
+//--- HTML: Game ---//
+const htmlBody = document.querySelector("body");
 const gameContainer = document.getElementById("game");
+const homeContainer = document.getElementById("home");
 var cards = [];
 const COLORS = [
   "red",
@@ -13,19 +16,19 @@ const COLORS = [
   "purple"
 ];
 
-// Shuffle the COLORS array and store it in shuffledColors
+//Shuffle the COLORS array and store it in shuffledColors
 function shuffle(array) {
   let counter = array.length;
 
-  // While there are elements in the array
+  //While there are elements in the array
   while (counter > 0) {
-    // Pick a random index
+    //Pick a random index
     let index = Math.floor(Math.random() * counter);
 
-    // Decrease counter by 1
+    //Decrease counter by 1
     counter--;
 
-    // And swap the last element with it
+    //And swap the last element with it
     let temp = array[counter];
     array[counter] = array[index];
     array[index] = temp;
@@ -36,24 +39,53 @@ function shuffle(array) {
 
 let shuffledColors = shuffle(COLORS);
 
-// Create div elements for each color and add them to the game container
+//Create div elements for each color and add them to the game container
 function createDivsForColors(colorArray) {
+  const h1 = document.createElement('h1');
+  h1.innerText = "Memory Game!";
+  gameContainer.prepend(h1);
   for (let color of colorArray) {
-    // create a new div
+    //create a new div
     const newDiv = document.createElement("div");
-    // give it a class attribute for the value we are looping over
+    //give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
-    // append the div to the element with an id of game
+    //append the div to the element with an id of game
     gameContainer.append(newDiv);
   }
 }
 
+//--- HTML: Landing Page ---//
+function displayLandingPage() {
+  const div = document.createElement("div")
+  const h1 = document.createElement("h1");
+  h1.innerText = "PLAY CARD-GAME";
+  div.appendChild(h1);
+  homeContainer.append(div);
+
+  function playCardGame() {
+    //Start Card-game
+    localStorage.clear();
+    h1.removeEventListener("click", playCardGame);
+    init();
+  }
+
+  h1.addEventListener("click", playCardGame);
+}
+//--- JavaScript ---//
+function storeHTMLElements() {
+  localStorage.setItem("cardGameHTML", gameContainer.innerHTML);
+}
+
+function displayHTMLElements() {
+  gameContainer.innerHTML = localStorage.getItem("cardGameHTML");
+}
+
 function startGame() {
   createDivsForColors(shuffledColors);
-  // Store the current state in local storage
-  localStorage.setItem("dataHTML", gameContainer.innerHTML);
-  // Load the game state from local storage
-  gameContainer.innerHTML = localStorage.getItem("dataHTML");
+  //Store the current state in local storage
+  storeHTMLElements();
+  //Load the game state from local storage
+  displayHTMLElements();
 }
 
 function restartGame() {
@@ -61,16 +93,8 @@ function restartGame() {
   location.reload();
 }
 
-function storeHTMLElements() {
-  localStorage.setItem("dataHTML", gameContainer.innerHTML);
-}
-
-function displayHTMLElements() {
-  gameContainer.innerHTML = localStorage.getItem("dataHTML");
-}
-
 function init() {
-  if(localStorage.getItem("dataHTML") === null) {
+  if(localStorage.getItem("cardGameHTML") === null) {
     startGame();
   }
   
@@ -79,14 +103,14 @@ function init() {
   var pairsFound = 0;
 
   //--- Functions ---//
-  function turnToWhite(event) {
-    event.style.background = "white";
-    event.classList.remove("find-match");
+  function turnToWhite(card) {
+    card.style.background = "white";
+    card.classList.remove("find-match");
   }
 
-  function turnToColor(event) {
-    event.style.background = event.className;
-    event.classList.add("find-match");
+  function turnToColor(card) {
+    card.style.background = card.className;
+    card.classList.add("find-match");
   }
 
   function resetCards(cardOne, cardTwo) {
@@ -98,40 +122,40 @@ function init() {
 
   function keepCards() {
     pairsFound++;
-    // Store the current state in local storage
+    //Store the current state in local storage
     storeHTMLElements();
   }
   
   function compareSelectedCards() {
-    // Disable card clicks during comparison
+    //Disable card clicks during comparison
     disableCardClick();
     var cardOne = "." + cards[0].replace(" ", ".");
     var cardTwo = "." + cards[1].replace(" ", ".");
     if(cardOne == cardTwo) {
-      // If the cards match, keep them revealed
+      //If the cards match, keep them revealed
       keepCards();
     } else {
-      // If they don't match, reset their colors
+      //If they don't match, reset their colors
       resetCards(cardOne, cardTwo);
     }
 
     cards = [];
-    // Re-enable card clicks after a delay
+    //Re-enable card clicks after a delay
     setTimeout(enableCardClick, 1500);
   }
 
   //--- Events ---//
   function disableCardClick() {
-    // Remove the event listener temporarily to disable card clicks
+    //Remove the event listener temporarily to disable card clicks
     test.removeEventListener("click", handleClick);
   }
 
   function enableCardClick() {
-    // Re-add the event listener to enable card clicks
+    //Re-add the event listener to enable card clicks
     test.addEventListener("click", handleClick);
 
     if(pairsFound == COLORS.length/2) {
-      // If all pairs are found, display a message and restart the game
+      //If all pairs are found, display a message and restart the game
       alert("Congratulations, you won!!");
       setTimeout(function() {
         restartGame();
@@ -141,27 +165,27 @@ function init() {
 
   function handleClick(event) {
     if (!event.target.className.includes("find-match")) {
-      // If a card is clicked, reveal it
+      //If a card is clicked, reveal it
       turnToColor(event.target);
       cards.push(event.target.className);
 
       if (cards.length == 2) {
-        // If two cards are revealed, compare them
+        //If two cards are revealed, compare them
         compareSelectedCards();
       }
     } else {
-      // If a revealed card is clicked again, hide it
+      //If a revealed card is clicked again, hide it
       turnToWhite(event.target);
       cards.pop();
     }
   }
 
-  // Enable card clicks and display the game elements
+  //Enable card clicks and display the game elements
   enableCardClick();
   displayHTMLElements();
 }
 
-// Initialize the game when the DOM is loaded
-document.addEventListener("DOMContentLoaded", function() {
-  init();
+//Initialize the game when the DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  displayLandingPage();
 });
