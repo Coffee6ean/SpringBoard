@@ -1,10 +1,15 @@
+//--- Global variables ---//
+const main = document.querySelector("main");
+/*
+//--- Class Functions ---//
 function storeHTMLElements() {
-    localStorage.setItem("htmlData", taskList.innerHTML);
+    localStorage.setItem("htmlData", main.innerHTML);
 }
 
 function displayHTMLElements() {
-    taskList.innerHTML = localStorage.getItem("htmlData");
+    main.innerHTML = localStorage.getItem("htmlData");
 } 
+*/
 
 function init() {
     //--- Local variables ---//
@@ -15,6 +20,7 @@ function init() {
     const imgContainer = document.querySelector(".image-container");
     const sendBtn = document.querySelector("#send");
     const deleteBtn = document.querySelector("#delete");
+    var counter = 0;
 
     //--- Member Functions ---//
     function addTopText(string) {
@@ -22,6 +28,7 @@ function init() {
         div.className = "top-txt";
         div.innerText = string;
         topText.classList.remove("failed");
+        topText.setAttribute("placeholder", "Text");
 
         imgContainer.prepend(div);
     }
@@ -30,6 +37,7 @@ function init() {
         const img = document.createElement("img");
         img.setAttribute("src", string);
         imageLink.classList.remove("failed");
+        imageLink.setAttribute("placeholder", "Link");
 
         imgContainer.append(img);
     }
@@ -39,8 +47,23 @@ function init() {
         div.className = "bot-txt";
         div.innerText = string;
         bottomText.classList.remove("failed");
+        bottomText.setAttribute("placeholder", "Text");
 
         imgContainer.append(div);
+    }
+
+    function removeImage() {
+        imgContainer.innerHTML = "";
+    }
+
+    function rejectFormInput(obj) {
+        obj.classList.add("failed"); 
+        if(obj.id === "image-link") {
+            obj.setAttribute("placeholder", "Add Link");
+        } else {
+            obj.setAttribute("placeholder", "Add Text");
+        }
+        counter = 0;
     }
 
     function fillForm(event) {
@@ -50,37 +73,41 @@ function init() {
         let bot = bottomText.value;
         let lnk = imageLink.value;
 
-        console.log(event.target)
         if(top === "") {
-            topText.className = "failed";
-        } else {
-            addTopText(top);
+            rejectFormInput(topText);
+            counter++;
         }
         if(lnk === "") {
-            imageLink.className = "failed";
-        } else {
-            addImgLink(lnk);
-        }
+            rejectFormInput(imageLink);
+            counter++;
+        } 
         if(bot === "") {
-            bottomText.className = "failed";
-        } else {
+            rejectFormInput(bottomText);
+            counter++;
+        }
+
+        if(counter === 0) {
+            addTopText(top);
+            addImgLink(lnk);
             addBotText(bot);
         }
 
+        //storeHTMLElements();
         //setTimeout(clearForm, 500);
     }
 
     function clearForm() {
+        counter = 0;
         topText.value = "";
         bottomText.value = "";
         imageLink.value = "";
         topText.classList.remove("failed");
         bottomText.classList.remove("failed");
         imageLink.classList.remove("failed");
-    }
-
-    function removeImage() {
-        imgContainer.innerHTML = "";
+        topText.setAttribute("placeholder", "Text");
+        imageLink.setAttribute("placeholder", "Link");
+        bottomText.setAttribute("placeholder", "Text");
+        //storeHTMLElements();
     }
 
     //--- Events ---//
@@ -89,7 +116,8 @@ function init() {
     deleteBtn.addEventListener("click", (e) => {
         clearForm(e);
         removeImage();
-    })
+    });
+    //displayHTMLElements();
 }
 
 document.addEventListener("DOMContentLoaded", init);
