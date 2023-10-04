@@ -1,16 +1,3 @@
-//--- Global variables ---//
-const main = document.querySelector("main");
-/*
-//--- Class Functions ---//
-function storeHTMLElements() {
-    localStorage.setItem("htmlData", main.innerHTML);
-}
-
-function displayHTMLElements() {
-    main.innerHTML = localStorage.getItem("htmlData");
-} 
-*/
-
 function init() {
     //--- Local variables ---//
     const form = document.querySelector("form");
@@ -92,8 +79,7 @@ function init() {
             addBotText(bot);
         }
 
-        //storeHTMLElements();
-        //setTimeout(clearForm, 500);
+        setTimeout(clearForm, 500);
     }
 
     function clearForm() {
@@ -107,7 +93,6 @@ function init() {
         topText.setAttribute("placeholder", "Text");
         imageLink.setAttribute("placeholder", "Link");
         bottomText.setAttribute("placeholder", "Text");
-        //storeHTMLElements();
     }
 
     //--- Events ---//
@@ -117,7 +102,6 @@ function init() {
         clearForm(e);
         removeImage();
     });
-    //displayHTMLElements();
 }
 
 document.addEventListener("DOMContentLoaded", init);
