@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 90vh;
+    color: #4C473E;
+    background-color: whitesmoke;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: auto;
+}
+
+main {
+    position: relative;
+    display: contents;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form {
+    position: relative;
+    top: 250px;
+    width: 40%;
+    max-height: 300px;
+    float: left;
+    margin: 5px;
+    border: 2px solid #F7C160;
+    border-radius: 10px;
+    padding: 2rem;
+    justify-content: center;
+    align-items: end;
+}
+
+label {
+    display: block;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 10px;
+}
+
+.failed {
+    border: solid red;
+    border-radius: 2px;
+    border-width: 2px;
+    box-shadow: 0 0 2px red;
+}
+
+#top-text {
+    font-size: large;
+}
+
+#bottom-text {
+    font-size: large;
+}
+
+#image-link {
+    font-size: large;
+}
+
+#meme {
+    position: relative;
+    top: 250px;
+    width: 60%;
+    height: 300px;
+    float: right;
+    margin: 5px;
+    border: 2px solid #F7C160;
+    border-radius: 10px;
+    padding: 2rem;
+    justify-items: center;
+    vertical-align: middle;
+}
+
+span.icon {
+    position: absolute;
+    top: calc(45% - 10px);
+    right: calc(45% - 10px);
+    font-size: 58px;
+    font-variation-settings: 'OPSZ' 58;
+}
+
+button {
+    position: relative;
+    top: 50px;
+    margin: 5px;
+}
+
+/*Meme Image*/
+.image-container {
+    position: relative;
+    top: -15px;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;   
+}
+
+
+/*Meme Text*/
+.top-txt {
+    position: relative;
+    top: 22%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    color: #FFF;
+    font-weight: 200;
+}
+
+.bot-txt {
+    position: relative;
+    top: -35%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    color: #FFF;
+    font-weight: 200;
+}
+
+/*Buttons*/
+#send {
+    display: inline-flex;
+    position: relative;
+    justify-self: baseline;
+    top: 0px;
+    height: 45px;
+    width: 100px;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FAE6C2;
+    overflow: hidden;
+}
+
+#send:hover {
+    background-color: #F7C160;
+    transition: 250ms;
+}
+
+#send .button-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+    font-size: 1.25em;
+    font-family: 'Poppins', sans-serif;
+}
+
+#send .material-symbols-outlined {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0 0 7px;
+    font-size: 2em;
+    background-color: #F7C160;
+    height: 100%;
+    width: 100%;
+}
+
+#delete {
+    display: inline-flex;
+    position: relative;
+    justify-self: baseline;
+    top: 0px;
+    height: 45px;
+    width: 100px;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FAE6C2;
+    overflow: hidden;
+}
+
+#delete:hover {
+    background-color: #F7C160;
+    transition: 250ms;
+}
+
+#delete .button-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 7px;
+    height: 100%;
+    font-size: 1.25em;
+    font-family: 'Poppins', sans-serif;
+}
+
+#delete .material-symbols-outlined {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0 0 5px;
+    font-size: 2em;
+    background-color: #F7C160;
+    height: 100%;
+    width: 100%;
+}

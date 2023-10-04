@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Gabarito:wght@500&family=Onest:wght@200&family=Oswald&family=Pixelify+Sans:wght@500&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>MEME GENERATOR</h1>
+        <span class="material-symbols-outlined">
+            skull
+        </span>
+        <span class="material-symbols-outlined">
+            favorite
+            </span>
+        <span class="material-symbols-outlined">
+            smart_toy
+        </span>
+    </header>
+    <main>
+        <section id="form">
+            <form action="">
+                <div>
+                    <label for="">Top text</label>
+                    <input type="text" id="top-text" placeholder="Text" required>
+                </div>
+                <div>
+                    <label for="">Bottom text</label>
+                    <input type="text" id="bottom-text" placeholder="Text" required>
+                </div>
+                <div>
+                    <label for="">Image</label>
+                    <input type="link" id="image-link" placeholder="Link" required>
+                </div>
+            </form>  
+            <div>
+                <button id="send">
+                    <span class="button-text">Send</span>
+                    <i class="material-symbols-outlined">
+                        send
+                    </i>
+                </button>
+                <button id="delete">
+                    <span class="button-text">Delete</span>
+                    <i class="material-symbols-outlined">
+                        delete
+                    </i>
+                </button>
+            </div>
+        </section>
+        <section id="meme">
+            <span class="material-symbols-outlined icon">
+                image
+            </span>
+            <div class="image-container">
+                <!--
+                <div class="top-txt">Hello World!</div>
+                <img src="Images/HD wallpaper_ Ghost, Pixel Art, Pixels.jpeg" alt="">
+                <div class="bot-txt">Bye World!</div>
+                -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

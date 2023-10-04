@@ -104,7 +104,7 @@ Git commands -
         commits can be saved if they are merged to masater before delition, with
         [git branch -D branch_name] the branch and all commits made within will
         be lost
-- git merger branch_name: Command to bring all commits for the declared branch
+- git merge branch_name: Command to bring all commits from the declared branch
         to our standing branch
 -> git remote add origin remote_repo_url: Add a remote repo to local git 
         instance. [git remote -v], check for current declared remote repo url

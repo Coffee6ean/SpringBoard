@@ -1,0 +1,131 @@
+Jasmine Testing -
+
+Goals:
+- Explain wht testing is and why we write tests
+- See some example tests with Jasmine
+- Learn about the differences between unit and integration tests
+- How to write code that is easy to test
+
+Benefits of Testing - Code that tests code
+
+Why Test?
+- Manually tetsing software is tediuos and error prone
+    - In small programs we can manually check all pieces of functionality before
+        pushing our code
+    - But as our programs get larger it becomes impossible to catch everything 
+        that might break
+- Writing tests is also a good way to clarify the expectations of a function
+    - We have to specify what the legal input/output should be
+- Reading tests is a great way to understand a new code base
+- Testing is a core skill for professional developers
+
+Testing Tool - 
+Jasmine is one of the most pupular JavaScript testing framework. Jest (another
+popular JavaScript testing library) is commonly used with Node and React and
+provides multiple layers on top of Jasmine.
+Once you learn one testing framework you can apply the same knowledge to others
+
+The testing process:
+- Tetsing allows us to automate the tedious work of making sure new lines of code 
+    don't break pre-existing code
+- In order to work with Jasmine in the browser se need to import the library using
+    a script tag - use a CDN (Content Delivery Network) we don't need to download
+    it
+
+Why do we need a testing library?
+We could simply pass values to our code and use "===" to validate the response, but
+we get additional features from a testing library:
+- Easier to read syntax
+- Helps prevent duplicate code
+- Let's us easily match objects
+- The test results are easier to read
+
+Grouping our tests with the 'describe' keyword: 
+Describe allows us to group related tests in the smae namespace - this makes it easier
+to read our tests and maintain our code
+
+Cleaning up after running testing:
+We have already seen how a testing library invokes the code form our codebase directly.
+This allows us to assert the return values of each function, however, invoking functions
+in our code might have undesireable lasting effects:
+- Writing to a database
+- Updating the HTML of our web app
+
+Testing libraries typically have some functionality to help us undo the side effects of
+our tests.
+
+Jasmine hooks -
+Sometimes it is useful to run initialization code before all tests, instead of before each
+test. We have a 'beforeAll()' hook for doing this.
+This is especially useful for logic related to connecting to a database. We also have an 
+'afterAll()' that runs one time after all tests have finished
+
+
+Testing Best Practices - 
+Unit testing vs Integration testing:
+- Unit test:
+    - Narrow in scope
+    - Verify a module of code is doing what it is intended to do
+    - Simple and cheap
+    - Work well with pure functions that do not have side effects
+    - Example: verify a single function returns an expected value based on an argument
+- Integration test:
+    - Broader in scope 
+    - Verify that multiple modules of code are working together properly
+    - More complex and costly to maintain
+    - Used to test impure functions with side effects
+    - Example: verify the dependecies between functions are working together to produce an 
+        expected value
+
+JavaScript testing strategies
+A common paradigm in JavaScript is to create functions that are pure. Pure functions do not
+have side effects on external variables and are easily tested with a simple unit test.
+
+Maintaining tests on pure functions is easier than functions with comaplex dependencies. Not
+all code will be perfectly modular so combination of unit and integration tests is likely
+
+What to test?
+- Test every function in at least one way
+- Think about "edge cases"
+    - What if the list were empty?
+    - What about non-integer numbers?
+    - What if the file can't be found?
+    - Is the first case/last case handeled differently?
+
+Testable Code -
+- Write code that is easier to test
+    - More functions & smaller functions: easier to test (& debug!)
+    - Don't mix logic & UI in a function
+- Try keep things as much modular as possible
+
+Jasmine Functions -
+
+Demo:
+/*
+it('should calculate lower-bracket taxes', function () {
+  expect(calculateTaxes(10000)).toEqual(1500);
+  expect(calculateTaxes(20000)).toEqual(3000);
+});
+
+it('should calculate higher-bracket taxes', function () {
+  expect(calculateTaxes(50000)).toEqual(12500);
+  expect(calculateTaxes(80000)).toEqual(20000);
+});
+*/
+
+- it(...): A function that accepts two arguments. The first argument is the name
+    used to refer to the test - this helps us find the test if it fails.The second 
+    argument is a callback function that executes the tests
+- expect(someValue).someMatcher(...): We pass the JavaScript that we want to test as 
+    the first argument to the 'expect()' function
+- .toEqual(obj): Checks that the value is the same (eg, different lists with same values
+    match)
+- .toBe(obj): Is the same object (eg, different lists with same values doesn't match)
+- .toContain(obj): Does object/array contain this item?
+- .not.: Add before matcher to invert (eg "expect(...).not.toEqual(...))
+
+*If we were to modify the calculateTaxes() function in some way without updating the
+test file, then our test might fail.
+
+
+Unit Testing -
