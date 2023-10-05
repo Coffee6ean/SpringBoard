@@ -1,0 +1,27 @@
+JS Array Methods, forEach -
+- Loops through an array
+- Runs a callback function for each value in the array and then returns
+    undefined
+- 'forEach' will always return undefined (no matter what)
+
+JS Array Methods, map -
+- Creates a new array
+- Iterates through an array
+- Runs a callback function for each value in the array
+- Adds the result of that callback function to the new array
+- Returns the new array
+- 'map' always returns a new array of the same length
+
+When would you use 'map'?
+- You wnat to 'transform' an array into another array of the same length
+- You do not want to overwrite an existing array instead rteturn a new copy
+
+JS Array Methods, filter -
+- Creates a new array
+- Loops through an array
+- Runs a callback function on each value in the array
+- If the callback function returns true, that value is pushed to the new 
+    array
+- If the callback function returns flase, that value will not be included 
+    in the new array
+    
