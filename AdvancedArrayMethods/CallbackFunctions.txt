@@ -50,3 +50,14 @@ JS Array Methods, findIndex -
 - Runs a callback on each value in the array
 - If the callback returns true for any single value, return the index at 
     which that value is found
+
+JS Array Methods, reduce -
+Whatever is returned from the callback function, becomes the new value of 
+the accumulator
+- Accepts a callback function and an optional second parameter 
+- Iterates through an array
+- Runs a callback on each value in the array
+- The first parameter to the callback is either the first value in the array
+    or the optional second parameter
+- The first parameter to the callback is often called "accumulator"
+- The returned value from the callback becomes the new value of the accumulator
