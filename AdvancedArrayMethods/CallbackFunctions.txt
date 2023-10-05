@@ -25,3 +25,15 @@ JS Array Methods, filter -
 - If the callback function returns flase, that value will not be included 
     in the new array
     
+JS Array Methods, some -
+- Iterates through an array
+- Runs a callback on each value in the array
+- If the callback returns for at least one single value, return true
+- Otherwise, return false
+- The result of the callback will always be boolean
+
+JS Array Methods, every -
+- Iterates through an array
+- Runs a callback on each value in the array
+- If the callback returns for any single value, return false
+- Otherwise, return true
