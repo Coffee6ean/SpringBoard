@@ -1,0 +1,18 @@
+var -
+It used to be the only keyword to make a variable
+- We used 'var' to create variables
+- When defined in a function, the var keyword scopes a variable to that 
+    function
+- Function scoped and can be redeclared and reassigned
+
+let -
+- It can be reassigned but not redeclared (unlike var)
+- The let keyword creates a 'block-scoped' variable: a variable that only
+    exists inside a code block
+
+const -
+- The 'const' keyword prevents a variable from ever being reassigned or 
+    redeclared
+- const is also block-scoped, like let
+
+Variable Hoisting - 
