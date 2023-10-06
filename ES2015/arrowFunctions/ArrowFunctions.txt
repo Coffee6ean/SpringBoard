@@ -1,0 +1,27 @@
+Arrow Functions -
+- Arrow functions are shorthand for function expressions
+- They cannot be named and they only work as function expressions
+- They are ideal for shortening callbacks
+
+Arrow functions have implicit return if you leave out the curly braces:
+    -> let nums = [1,2,3];
+    -> let arrSquared = nums.map(n => n ** 2);  //[1,4,9]
+
+Gotcha with Arrow Function -
+If you want to return an object, make usre it's wrapped in () or on more 
+than one line.
+
+Arrow Functions & 'this' - 
+Arrow Functions do not have their own 'this' context. If your function uses
+the keyword 'this', be wary.
+You should not be using arrow functions:
+- In an object method
+- When you need your own keyword 'this'
+
+Summary - 
+- Can only be used as shorthand for anonymous function expressions
+- Must put parentheses around parameters if there are no 0 or 2+ parameters
+- Return statement is implied if you leave out the curly braces
+- They do not make their own 'this'
+
+babeljs.io
