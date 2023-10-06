@@ -1,0 +1,32 @@
+Object Enhancements - 
+
+Object Shorthand - 
+Features that enhance the creation of objects and object literals.
+ES2015 provides quite a few enhancements for JS objects. When keys are the 
+same name, as the variable values, (this happens a lot), you don't have to
+repeat yourself
+    -> let firstName = "Mary"
+       let lastName = "Mark"
+    => let instructor = {
+        firstName,
+        lastName
+       }
+
+Shorthand Methods -
+A nice shorthand when a key in an object represents a function. We do not
+use arrow functions here
+    => let instructor = {
+        sayHello: function() {
+            return "Hello";
+        }
+       }
+
+Computed Property Names -
+ES2015 allows us ton create an object wit a key taht JavaScript can compute
+at definition.
+    //ES5                                       //ES2015
+    -> let firstName = "Mary";                  -> let firstName = "Mary"; 
+    -> let intructor = {};                      -> let instructor = {
+    -> intructor[firstName] = "That's me";          [firstName]: "That's me"
+    => intructor.Mary;  //"That's me"              }
+                                                => instructor.Mary;  //"That's me"
