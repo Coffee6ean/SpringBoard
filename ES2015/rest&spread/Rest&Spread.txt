@@ -1,0 +1,53 @@
+Rest / Spread Operators -
+In JS, every function created using the 'function' keyword has access to a
+special keyword called 'arguments'
+
+The problem is:
+- Unfortunately, arguments is not an actual array, it is an         
+"array-like-object"
+- It has a 'length' property and can be accessed at a specific index, but 
+does not have build in array methods like map, filter, etc.
+
+So what did we do?
+We turned the array-like-object into an array, but making a copy of an 
+array and setting the target of the copy to be the arguments 
+array-like-object:
+    -> function doubleArgs() {
+        let arrayFromArgs = [].slice.call(arguments);
+        return arrayFromArgs.map(function(arg) {
+            return arg * 2;
+        })
+       }
+    => doubleArgs(1,2) //[2,4]
+
+Rest -
+- They are both the "same" operator and use three dots '...'
+- When the three dots are part of a function definition, we call the 
+    operator the "rest" operator
+- The rest operator is the last parameter defined in a function and will 
+    evaluate to an array of all additional arguments passed in
+    -> function displayArguments(...restOfArgs) {
+        console.log("The first argument, restOfArgs[0])
+        return `You passed in ${restOfArgs.length} arguments`;
+       }
+    => displayArguments(1,2,3);  //"The first argument is 1"
+
+Collecting Remaining Argumnets -
+You can also specify several named parameters and collect the rest
+    -> function oneOrMoreArgs(first, ...more) {
+        console.log(first);
+
+        more.forEach(arg => {
+            console.log(arg);
+        });
+       }
+
+Spread -
+The '...' syntax, in a different context, is called the spread operator.
+For example: when calling a function, you can "spread out" array elements:
+    -> const names = ["Mary", "Colt", "Angela", "Abe"];
+    => takesFour(...names); //Mary
+                            //Colt
+                            //Angela
+                            //Abe
+
