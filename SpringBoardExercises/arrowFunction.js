@@ -1,3 +1,14 @@
+//ES5 Map Callback
+function double(arr) {
+  return arr.map(function(val) {
+    return val * 2;
+  });
+}
+
+//ES2015 Arrow Functions Shorthand
+const double = arr => arr.map(val => val * 2);
+
+//Refactor the following function to use arrow functions:
 function squareAndFindEvens(numbers){
     var squares = numbers.map(function(num){
       return num ** 2;
