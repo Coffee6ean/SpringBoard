@@ -1,0 +1,11 @@
+Sets - 
+- All values in a set are unique - no duplicates
+- Any type of value can exist in a set
+- Created using the new keyword
+- Exist in quite a few other languages, ES2015 finally brings them to 
+    JavaScript
+
+When would you use sets?
+- Removing duplicate values
+- Uniqueness required
+- Efficiently checking if an item is in a collection (much better than arrays)

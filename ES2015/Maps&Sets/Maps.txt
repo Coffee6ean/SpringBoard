@@ -1,0 +1,15 @@
+Data Structures in JavaScript - 
+Data structures are formats for efficiently collecting or storing data.
+Before JavaScript only had two types of data structures: Arrays and Objects
+
+As of ES2015, we now have two new ones: Maps and Sets
+
+Maps -
+- Also called "Hash maps" in other languages
+- Until ES2015, objects were replacement for maps
+- Similar to objects, except the keys can be any data type
+
+Why use maps?
+- Finding the size is easy - no more loops or Object.keys()
+- The keys can be any data type
+
