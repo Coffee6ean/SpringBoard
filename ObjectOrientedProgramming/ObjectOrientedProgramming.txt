@@ -1,0 +1,96 @@
+JS Objects Review - 
+POJO (Plain Old JavaScript Object): 
+    -> ley o1 = {};  ||  let o2 = new Object();
+    -> o1.name = "Whiskey";
+    -> o1["name"] = "Whiskey";
+
+Important to remember:
+- Properties that do not exist in the object register as undefined
+- All keys get "stringified"
+
+JS Methods Review - 
+We can add functions as keys:
+    -> o1.sayHi = function() {return "Hi"};
+    => o1.sayHi();  //Hi
+
+JS 'this' and Methods - 
+Using a POJO:
+    -> let triangle = {
+        a: 3,
+        b: 4,
+        getArea: function() {
+            return (this.a * this.b)/2;
+        },
+        getHypotenuse: function() {
+            return Math.sqrt(this.a ** 2 + this.b ** 2);
+        }
+       }
+
+*'this' references to "this object"
+
+JS Constructor Functions and New -
+The 'new' operator lets developers create an instance of a user-defined
+object type or of one of the built-in types that has a constructor function.
+The 'new' keyword does the following things:
+- Creates a blank, plain JavaScript object
+- Links (sets the constructor of) this object to another object
+- Passes the newly created object from *Step 1 as the 'this' context
+- Returns 'this' if the function doesn't return its own object
+
+JS Classes -
+Classes are a "blueprint" of functionality:
+    -> class Triangle {
+        getArea() {
+            const {a,b,c} = this;
+            const s = (a+b+c)/2;
+            return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        }
+        display() {
+            console.log(`I am a triangle with sides ${a}, ${b} and ${c}`);
+        }
+       }
+
+JS Constructors -
+Adding properties to the instances:
+    -> class Triangle {
+        constructor(a,b,c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        getArea() {
+            const {a,b,c} = this;
+            const s = (a+b+c)/2;
+            return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        }
+        display() {
+            console.log(`I am a triangle with sides ${a}, ${b} and ${c}`);
+        }
+       }
+Validating data:
+    -> constructor(a,b) {
+        if(!Number.isFinite(a) || a <= 0)
+            throw new Error("Invalid a: " + a);
+        if(!Number.isFinite(b) || b <= 0)
+            throw new Error("Invalid b: " + b);
+
+        this.a = a;
+        this.b = b;
+    }
+*Never 'return' a value from a constructor - since its automatic, it will
+    stop the execution from the class, but it will still create an instance
+
+JS Class Methods -
+Functions placed in a class are 'methods' (formaly: 'instance methods' or
+'member functions'). They have access to properties of object with 'this'.
+They can take arguments/return data like any other function
+    -> getArea() {
+        const {a,b,c} = this;
+        const s = (a+b+c)/2;
+        return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+       }
+    
+JS Class Extends - 
+Inheritance & Super.
+ES2015 added in a simple, OOP way to pass down methods/properties from one
+class to another with the 'extends' keyword for Inheritance.
