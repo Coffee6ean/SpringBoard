@@ -1,0 +1,49 @@
+JavaScript 'this' - 
+
+This & bind - 
+In a sense, JavaScript doesn't have functions. Everything is called on
+something, like a method. When you call a function on nothing, you are 
+actually calling it on the "global object'
+- In browser JS, that's 'window' (the browser window)
+- In NodeJS, that's 'global' (where some Node utilities are)
+
+Global Object -
+    -> alert("Hi");
+    -> window.alert("Hi)  //same thing
+
+Call -
+Sometimes, you'll need to say "call this function on this object", that's 
+what 'call()' is for 
+    -> let fDance = fluffy.dance;
+       //call on fluffy, passing "tango" as arg
+    -> fDance.call(fluffy, "tango");
+    => whatIsThis.call(fluffy);  //this = fluffy
+
+Bind - 
+You can "perma-bind" a function to a context. It does not execute your 
+function, it give a version of the function where we bind-on where the value
+has been changed
+    -> fDance("tango");  //error -- this isn't the cat
+    => fDance.call(fluffy, "tango")  //ok but tedious to always do
+
+    -> let betterDance - fDance.bind(fluffy);
+    => betterDance("tango");  //ok -- bound so that 'this' is Fluffy
+
+Binding Arguments -
+You can also bind arguments to functions. That will bake them into the 
+function
+    -> function applySalesTax(taxRate, price) {
+        return price + price * taxRate;
+       }
+       //'null' for 'this' means it doesn't matter what 'this' is
+    -> const applyCASalesTax = applySalesTax.bind(null, 0.0725);
+    => applyCASalesTax(50) //53.63
+
+Binding Callbacks - 
+Want to have object method as callback:
+    -> myBtn.addEventListener("click", fluffy.dance);
+
+That won't work - browser will call dance on global object
+
+Arrow Functions & 'this' - 
+Arrow functions do not make their own 'this'
