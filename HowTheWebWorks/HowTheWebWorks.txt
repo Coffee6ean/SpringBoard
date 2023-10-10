@@ -1,0 +1,61 @@
+Networks, the Internet and the Web -
+
+Networks: A 'network' is a set of computers that can intercommunicate. The
+internet is justa really big network. The internet is made up of smaller, 
+"local" networks.
+
+The Internet is the global system of interconnected computer networks that 
+uses the Internet protocol suite (TCP/IP) to link to devices worldwide. It
+is a ntework of networks that consists of private, public, academic, etc. 
+networks of local to global scope, linked by a broad array of electronic, 
+wireless, and optical networking technologies
+
+IP Addresses - 
+On networks, computers have an "IP Address" - a unique address to find that
+computer on the network.
+An IP address looks like this: 123.77.32.121 
+(four numbers 0 to 255 connected by dots -> IPv4)
+
+*For more possible combinations there is IPv6 addresses
+
+Hostnames:
+We often talk to servers by "hostname" - site.com or computer-a.site.com
+That's just a nickname for the server, though. The same server can have 
+multiple names
+
+DNS (Domain Name System) -
+It associates various information with domain names assigned to each of the 
+participating entities. Most prominently, it translates more readily
+memorized domain names to the numerical IP addresses needed for locating
+and identifying computer services and devices with the underlying network
+protocols.
+Assigning domain names and mapping those names to Internet resources.
+
+//-----------------------------------------------------//
+"I want to talk to site.com"
+
+ ________________     Where is site.com?       __________________ 
+|  Your Browser  | ̶̶̶̶̶̶̶̶̶̶̶ ̶ ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ >  |  Computer Cache  |      
+ ¯¯¯¯¯¯^¯¯¯¯¯¯¯¯¯                              ¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯
+       |                                                |
+       |                                           _____˅______        
+       |                                          |   Router   |
+       |                                           ¯¯¯¯¯|¯¯¯¯¯¯
+       |                                                |
+       |                                           _____˅______        
+       |       ________________                   |    ISP     |
+       |< ̶ ̶ ̶ ̶ | Err: Not Found | < ̶ ̶ ̶ ̶ ̶ ̶ ̶ |        ¯¯¯¯¯¯|¯¯¯¯¯
+       |       ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯           |              |
+       _______________________________    |       _______˅_______        
+      |  site.com is at 123.45.67.89  | ̶< ̶ ̶ ̶ ̶ ̶ ̶ ̶ |  DNS Servers  |
+       ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+//-----------------------------------------------------//
+
+Unix (and OSX and Linux) systems ship with a utility, 'dig', which will 
+translate a hostname ino an IP address for you, and provide debugging
+information about the process by which it answered this.
+
+127.0.0.1:
+A special IP address, it's "this computer that you're on". In addition to
+their IP address on the network, all computers can reach themselves at this
+address. The name 'localhost' always maps to 127.0.0.1
