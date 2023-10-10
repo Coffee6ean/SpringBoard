@@ -42,7 +42,7 @@ Assigning domain names and mapping those names to Internet resources.
        |                                          |   Router   |
        |                                           ¯¯¯¯¯|¯¯¯¯¯¯
        |                                                |
-       |                                           _____˅______        
+       |                                               _____˅______        
        |       ________________                   |    ISP     |
        |< ̶ ̶ ̶ ̶ | Err: Not Found | < ̶ ̶ ̶ ̶ ̶ ̶ ̶ |        ¯¯¯¯¯¯|¯¯¯¯¯
        |       ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯           |              |

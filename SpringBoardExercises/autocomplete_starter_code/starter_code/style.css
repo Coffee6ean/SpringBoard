@@ -1,0 +1,28 @@
+body {
+  background: rgb(253,253,144);
+  background: linear-gradient(90deg, rgba(253,253,144,1) 0%, rgba(246,191,41,1) 48%, rgba(242,138,12,1) 100%);
+}
+
+input {
+  position: absolute;
+}
+
+.search-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 15rem;
+  left: 45%;
+}
+.search-container input,
+.search-container .suggestions {
+  position: relative;
+}
+
+ul {
+  margin: 15px;
+}
+
+ul li:hover {
+  background-color: gainsboro;
+}
