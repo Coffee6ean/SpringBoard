@@ -18,11 +18,6 @@ An IP address looks like this: 123.77.32.121
 
 *For more possible combinations there is IPv6 addresses
 
-Hostnames:
-We often talk to servers by "hostname" - site.com or computer-a.site.com
-That's just a nickname for the server, though. The same server can have 
-multiple names
-
 DNS (Domain Name System) -
 It associates various information with domain names assigned to each of the 
 participating entities. Most prominently, it translates more readily
@@ -42,7 +37,7 @@ Assigning domain names and mapping those names to Internet resources.
        |                                          |   Router   |
        |                                           ¯¯¯¯¯|¯¯¯¯¯¯
        |                                                |
-       |                                               _____˅______        
+       |                                           _____˅______        
        |       ________________                   |    ISP     |
        |< ̶ ̶ ̶ ̶ | Err: Not Found | < ̶ ̶ ̶ ̶ ̶ ̶ ̶ |        ¯¯¯¯¯¯|¯¯¯¯¯
        |       ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯           |              |
@@ -59,3 +54,128 @@ information about the process by which it answered this.
 A special IP address, it's "this computer that you're on". In addition to
 their IP address on the network, all computers can reach themselves at this
 address. The name 'localhost' always maps to 127.0.0.1
+
+URL (Universal Resource Locators) Anatomy -
+Colloquially termed a 'web address', is a reference to a web resource that
+specifies its location on a computer network and a mechanism for retrieving
+it.
+A typical URL could have the form 'http://www.example.com/index.html', which
+indicates a protocol ('http'), a hostname (www.example.com) and a file 
+name (index.html)
+ _____________________________________________________________________
+| Protocol        Hostname        Port         Resource         Query |
+|   http          site.com         80       /some/page.html     ?x=1  |
+ ---------------------------------------------------------------------
+
+Protocols:
+Protocols are the conventions and ways of one thing talking to another
+- http: Hypertext Transfer Protocol (standard web) => How browsers and 
+      servers communicate
+- https: HTTP Secure => How browsers and servers communicate with 
+      encryption
+- ftp: File transfer protocol => An older protocol for sending files over
+      internet
+
+Hostnames:
+We often talk to servers by "hostname" - site.com or computer-a.site.com
+That's just a nickname for the server, though. The same server can have 
+multiple names
+
+Port: 
+- Every server has 65,535 unique 'ports' you can talk to
+- Services tend to have a defualt port
+      - For HTTP, is port 80
+      - For HTTPS, is port 443
+*You don't have to specify in URL unless you wnat a different port
+
+Resource:
+- This always talks to some 'web server' program on the server
+      - For some servers, may just have them read an actual file on disk:
+            => /some/page.html
+      - For many servers, 'dynamically generates' a page
+
+Query String:
+- This provides "extra information" - search terms, info from forms, etc
+      - The server is provided this info; might use to change page
+      - Sometimes, JavaScript will use this information in addition/instead
+- Multiple arguments are separated by '&': ?x=1&y=2
+      - Argument can be given several times: ?x=1&y=2
+
+
+Browsers & Servers and HTTP - 
+In computing, a server isa a computer program or a device that provides
+functionality for other programs or devices, called 'clients'. This 
+architecture is called the client-server model
+Servers can provide various functionalities, often called 'services', such
+as sharing data or resources among multiple clients, or performing computation
+for a client
+ ___________________________________________________________
+|                          *Request*                        |
+|  ________________   GET/HTTP/1.1 (Headers)    __________  |
+| |   Web Browser  | ̶ ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ >  |  Server  | | 
+|  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                             ¯¯¯¯¯¯¯¯¯¯  |
+|___________________________________________________________|  
+ ___________________________________________________________
+|                     *Internal Work*                       |
+|  ________________            __________      ___________  |
+| |   Web Browser  |          |  Server  |<-->| DB Server | |
+|  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯¯¯¯  |
+|___________________________________________________________| 
+ ___________________________________________________________
+|                         *Response*                        |
+|  ________________  Headers & <html>...</html> __________  |
+| |   Web Browser  | ̶< ̶ ̶ ̶̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶   |  Server  | | 
+|  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                             ¯¯¯¯¯¯¯¯¯¯  |
+|___________________________________________________________| 
+
+What's in a Request?
+- Method (ex: GET, SET, PUT, etc)
+- HTTP protocol version (almost always 1.1)
+- Resource URL you want
+- Headers:
+      - Hostname you're asking about 
+      - Date your browser thinks it is
+      - Laguage your browser wants information in
+      - Any cookies that server has suggestions
+      - And more
+
+What's in a Response?
+- HTTP protocol version (almost always 1.1)
+- Response Status Code (200, 404, etc)
+- Headers: 
+      - Content Type (typically 'text/html' for web pages)
+      - Date/time the server thinks it is
+      - Any cookies server wants to set
+      - Any caching information
+      - And more
+
+Response Codes:
+- 200 = Ok
+- 304 = Cached page
+- 301 = What you requested is elsewhere
+- 404 = Not Found
+- 500 = Server had an internal problem
+
+Setting up a Server - 
+
+Serving Over HTTP:
+Just opening an HTML file in browser uses 'file' protocol, not 'http'.
+Some things don't work same (especially security-related stuff). It's often
+useful to start a simple HTTP server for testing
+
+Multiple Requests:
+- Requesting one webpage often involves many separate requests 
+- Browsers issue these requests asynchronously
+      - They'll assemble teh final result as requests come back
+- You can view this in the browser console -> Network
+
+GET vs. POST - 
+- GET: request without side effects (ie, donn't change server data)
+      - Typically, arguments are passed along in query string
+      - Entering-URL-in-browser, clicking links, adn some form submissions
+- POST: request with side effects (ie, change data on server)
+      - Typically, arguments sent as body of the request (not in query string)
+      - Some form submissions (but never entering-URL-in-browser or links)
+      - Always do this if there's a side-effect: sending mail, charge credit 
+            card, etc
+      - "Are you sure you want to resubmit?"
