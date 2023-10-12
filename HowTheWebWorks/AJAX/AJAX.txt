@@ -43,7 +43,8 @@ web page to update just part of a page without disrupting what the user is
 doing
 
 Starting a Server - 
+We can use python:
+  -> python3 -m http.server
 
-
-AJAX with Axios - 
+We can use VSCode extension
 
