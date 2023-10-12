@@ -1,0 +1,78 @@
+Working with API's - 
+
+API (Application Programming Interface): 
+An API is an interface or communication protocol between different parts
+of a computer porgram intended to simplify the implementation and maintenance
+of software.
+An API may be for web-based system, operating system, database system, 
+computer hardware, or software library.
+An API specification can take many forms, but often includes specificactions
+for routines, data structures, object classes, variables, or remote calls.
+Documentation for the API usually is provided to facilitate usage and 
+implementation.
+
+More recently, the term has been often used to refer to a specific kind of 
+interface between a client and a server, which has been described as a 
+'contract' between both - such that if the client makes a request in a 
+specific format, it will always get a response in a specific format or 
+initiate a defined action. This is a specialized form of API, sometimes 
+defined as a WEB API
+
+WEB API:
+When used in the context of web development, an API is typically defined
+as a set of specifications, such as HTTP request messages, along with a 
+definition of the structure of response messages, usually in an Extensible
+Markup Laguage (XML) or JavaScript Object Notation (JSON) format
+
+Third Part APIs:
+Companies will provide access to their data (sometimes not for free)
+- Twitter API, give me all tweets that mention "ice cream"
+- Facebook API, send me the current user's profile picture
+- Weather API, what is the weather in LA?
+- GooglePlaces APLi, what gas stations are near the user?
+- Yelp API, give me 10 restaurants inthe zipcode 94110
+
+Summary - 
+An API is a set of clearly defined methods of communictaion between various
+components. An API may be for a web-based system, operating system, database
+system, computer hardware, or software library
+
+XML and JSON -
+
+Data Formats: 
+- When we browse on the web, we make HTTP requests and get HTML back.
+- API's don't respond with HTML
+    - HTML contains info about page structure. API's respond with data, 
+      not structure
+- They use different data formats like XML and JSON
+    - These are still text based formats - remember, HTTP is text based
+
+XML: 
+Syntactically similar to HTML, but does not describe presentation like HTML,
+and many of the tags are custom
+    -> <person>
+        <name>Elie</name>
+        <favoriteColor>purple</favoriteColor>
+        <city>San Francisco</city>
+       </person>
+
+JSON:
+JSON stands for JavaScript Object Notation. JSON looks similarf to JS objects,
+but all the keys must be double-quoted (")
+    -> {
+        "person": {
+            "name": "Elie",
+            "favoriteColor": "purple",
+            "city": "San Francisco",
+            "favoriteNumber": -97,
+            "interests": ["CEOing", "eating food"],
+            "furtureDreams": null
+        }
+       }
+
+Curl Requests -
+'curl' is used in command lines or scripts to transfer data.
+Simplest & most common request/operation made using HTTP is to GET a URL:
+    -> $ curl https://curl.haxx.se
+
+Reading API Documentation - 

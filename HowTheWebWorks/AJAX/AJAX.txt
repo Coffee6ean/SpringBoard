@@ -1,0 +1,49 @@
+AJAX (Asynchronous JavaScript And XML) -
+
+Traditional Requests:
+- Entering a URL in the browser bar 
+- Clicking on a link
+- Submitting a form
+
+In all cases:
+- Browser makes request 
+- Receives response 
+- Replaces entire 'resource' with result
+
+AJAX:
+AJAX is a technique in JavaScript for sending requests and receiving 
+responses from a server without having to reload the browser page
+
+         click link/submit form                        JavaScript makes request                                                                                      
+       ___________________________                __________________________________                                                                           
+      |                           |              |                                  |                                          
+ _____|_____                 _____˅____     _____|_____                        _____˅____                                                        
+|  Browser  |               |  Server  |   |  Browser  |                      |  Server  |                                                              
+ ¯¯¯¯¯^¯¯¯¯¯                 ¯¯¯¯¯|¯¯¯¯     ¯¯¯¯¯^¯¯¯¯¯¯                        ¯¯¯¯|¯¯¯¯                                                        
+      |___________________________|              |__________________________________|                                      
+              full HTML page                                  bit of data,                                                                  
+              replaces page                              doesn't replace page                                                                      
+                                                                                  
+AJAX web request:
+- Made from JavaScript in browser 
+- JavaScript makes request (GET, POST, or other)
+- You receive a response 
+
+Why use AJAX?
+- Don't need to relaod entire page if just 1 thing is changing
+- Interactive web sites 
+- Fewer fill page loads from server 
+    - Your JS can talk to other servers directly 
+- Less info has to go across network
+
+XMLHttpRequest -
+Use XMLHttpRequest (XHR) objects to interact with servers. You can retrieve
+data from a URL without having to do a full page refresh. This enables a 
+web page to update just part of a page without disrupting what the user is
+doing
+
+Starting a Server - 
+
+
+AJAX with Axios - 
+
