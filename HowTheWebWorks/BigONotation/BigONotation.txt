@@ -1,0 +1,82 @@
+Big-O-Notation -
+Who cares?
+- It's important to have precise vocabulary about how code performs
+- Useful for discussing trade-offs between different approaches 
+- When code slows, identifying inefficient parts helps find pain points
+
+The problem with timers -
+- Different machines will record different timers
+- The same machine will record different times!
+- For fast algorithms, speed measurments (benchmarking) may not be precise
+    enough
+- Instead, count the number of simple operations the computer has to perform
+
+Counting Operations -
+- Let's count the number of simple operations the computer has to perform
+- Example:
+    -> function addUpToSecond(n) {
+        return n *(n + 1)/2
+       }
+    => 3 simple operations, regardless of the size of 'n'
+- Regardless of the exact number, number of operations grows proportional
+    to 'n'
+    - If n doubles, number of operations will also double
+- We can use this idea to meausure speed allocation of algorithms
+
+Intro to Big O -
+- Big O Notation is a way to formalize fuzzy counting 
+    - Can be used to talk about how the runtime of the algorithm grows as 
+        inputs grow
+- No to much attention to the details only the trends
+
+Big O -
+An algorithm is O(f(n)) if number of simple operations is eventually less
+than a constant times f(n), as n increases
+    - f(n) could be linear (f(n) = n)
+    - f(n) could be quadratic (f(n) = n^2) 
+    - f(n) could be constant (f(n) = 1)
+
+Worst Case - 
+- Big O notation is concerned with the 'worst case' of algorithm's performance
+    -> function allEven(nums) {
+        for(var i=0; i< nums.length; i++) {
+            if(nums[i] % 2 !== 0) {
+                return false;
+            }
+        }
+        return true;
+       }
+    => This is O(n), since even though it may not always  take 'n' times,
+        it will scale with 'n'
+
+Simplifying Big O - 
+- When determining algorithm time complexity, rule for big O expressions:
+    - Constants do not matter
+    - Smaller terms do not matter
+
+Helpful hints:
+- Arithmetic operations are constant
+- Variable assignment is constant 
+- Accessing elements in array (by index) or object (by key) is constant
+- Loops: length of the loop times complexity of whatever happens in loop
+
+Logarithmic value: The logarithm of a number roughly measures the number of
+times you can divide that number by 2 before you get a value that's less
+than or equal to one
+
+Must knows for now -
+- A loop does not mean it's O(n)
+- A loop in a loop does not mean it's O(n^2)
+- Best runtime for sorting is O(n x log2(n)) - also referred to as nlog2(n)
+
+Space Complexity -
+So far, we've been focusing on time complexity: how can we analyze runtime
+of an algorithm as size of inputs increase?
+Can also use big O notation to analyze space complexity: how will memory
+usage scale as size of inputs increase?
+
+Rule of thumb in JS:
+- Most primitives (booleans, numbers, undefined, null): constant space
+- Strings: O(n) space (where 'n' is the string length)
+- Reference types: generally O(n) where 'n' is the length of array (or 
+    keys in object)
