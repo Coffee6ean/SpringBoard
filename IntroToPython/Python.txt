@@ -1,0 +1,30 @@
+Pyhon Introduction (Backend/Server side Programming) -
+- We've seen a lot of client-side stuff: HTML, CSS & JS
+- It's time to see the other side
+- There are tons of languages we could use to write server-side code with:
+    - Ruby 
+    - JS (Node)
+    - PHP
+    - Java
+    - Python
+
+The Game Plan - 
+- Start by learning basic Python syntax: variables, loops, functions, etc.
+- Move on to Object Oriented Programming in Python
+- Learn how to create our own servers using Python
+- Then, Python testing
+- Take a detour to learn SQL and how to connect to a DB using Python
+- Cover Authentication and deployment
+
+Why Python?
+- It's fast, powerful and widely used
+- "High level": express concepts at a high level (a little more than JS)
+- Super clean syntax
+- Runs on servers (but not in browser)
+- Particularly used for data science, machine learning, making servers, etc
+
+*Extra information: python.org
+
+PIP (Python Package Installer) -
+
+*Extar information: pypi.org
