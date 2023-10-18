@@ -15,17 +15,53 @@
 
 <body>
 <h1 class="display-1">Giphy World</h1>
-<p class="h1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus voluptatibus ipsa 
-  consequuntur perspiciatis, cumque dolores omnis qui inventore, itaque illum 
-  commodi facilis laborum non ut veniam dolorem, fugiat fugit voluptas!
-</p>
-<blockquote class="blockquote text-center">
-  <p>I like chicken nuggets</p>
-  <footer class="blockquote-footer">Alfredo Mejia</footer>
-</blockquote>
+<div class="container-fluid">
+  <div class="row m-2">
+    <div class="col">
+      <div class="form-group">
+        <form action="" id="search-form">
+          <label for="search">Enter a mood</label>
+          <input id="search" type="text" class="form-control" placeholder="text">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-items-center">
+    <div class="col-6 d-flex justify-content-center">
+      <button class="btn btn-secondary" id="search-btn">Search Giphy</button>
+    </div>
+    <div class="col-6 d-flex justify-content-center">
+      <button class="btn btn-danger" id="delete-btn">Remove Images</button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row m-3">
+    <div class="col-3" id="first-column">
+        <!-- New Image -->
+    </div>
+    <div class="col-3" id="second-column">
+      <!-- New Image -->
+    </div>
+    <div class="col-3" id="third-column">
+      <!-- New Image -->
+    </div>
+    <div class="col-3" id="fourth-column">
+      <!-- New Image -->
+    </div>
+  </div>
+</div>
+<div class="container-fluid fixed-bottom">
+  <div class="row d-flex align-xxl-items-end">
+    <blockquote class="blockquote text-center bg-light">
+      <p>I like chicken nuggets. Love you KRoll</p>
+      <footer class="blockquote-footer">Alfredo Mejia</footer>
+    </blockquote>
+  </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 <script src="app.js"></script>
 </body>
-
 </html>
