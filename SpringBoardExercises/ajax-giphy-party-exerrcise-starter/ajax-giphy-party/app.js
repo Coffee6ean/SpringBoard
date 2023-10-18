@@ -31,7 +31,7 @@ function clearHTMLElements() {
 
 async function getGiphByInput(input) {
     try{
-        const newUrl = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym`;
+        const newUrl = `https://api.giphy.com/v1/gifs/search?q=${input}&api_key=MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym`;
         const req = await axios.get(newUrl);
         const randomNum = Math.floor(Math.random() * req.data.data.length) + 1;
         const selected = req.data.data[randomNum];
