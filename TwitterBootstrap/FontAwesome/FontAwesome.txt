@@ -1,0 +1,4 @@
+Font Awesome -
+- Awesome set of icons for common symbols & brands
+- Comes as a font, so it scales & can be in any color
+- Convinient classes for resizing, animating, stacking and more
