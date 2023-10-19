@@ -1,0 +1,49 @@
+/*Header*/
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: rgb(155, 114, 83);
+}
+
+.col.button {
+    justify-content: right;
+    align-items: center;
+    margin-right: 25px;
+}
+
+#replay {
+    font-family: 'Pacifico', cursive;
+    color: aliceblue;
+    background-color: rgb(155, 114, 83);
+}
+
+/*Column Sizing*/
+#first-column, #second-column, #third-column, #fourth-column, #fifth-column, #sixth-column {
+    max-height: 900px;
+} 
+
+/*Card Sizing*/
+#first-column div, #second-column div, #third-column div, #fourth-column div, #fifth-column div, #sixth-column div {
+    height: 100px;
+    max-height: 150px;
+}
+
+/*First Card - Title*/
+div #first-card {
+    height: 70px;
+    justify-content: center;
+    text-align: initial;
+    font-family: 'Almarai', sans-serif;
+    font-weight: 1000;
+    padding: 12px 5px 5px 5px;
+    background-color: pink;
+}
+
+#second-card, #third-card, #fourth-card, #fifth-card, #sixth-card {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Almarai', sans-serif;
+    font-size: calc(0.6rem + 0.2vw);
+    font-weight: 800;
+    padding: 10px 5px 5px 5px;
+    background-color: antiquewhite;
+}
