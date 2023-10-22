@@ -35,18 +35,101 @@ function generateStoryMarkup(story) {
     `);
 }
 
+async function submitNewStory(evt) {
+  console.debug("submitNewStory");
+  evt.preventDefault();
+
+  // grab all info from form
+  const title = $("#create-title").val();
+  const url = $("#create-url").val();
+  const author = $("#create-author").val();
+  const username = currentUser.username
+  const storyData = { title, url, author, username };
+
+  const story = await storyList.addStory(currentUser, storyData);
+
+  const $story = generateStoryMarkup(story);
+  $allStoriesList.prepend($story);
+
+  // hide the form and reset it
+  $submitForm.slideUp("slow");
+  $submitForm.trigger("reset");
+}
+
+async function deleteStory(evt) {
+  console.debug("deleteStory");
+
+  const $closestLi = $(evt.target).closest("li");
+  const storyId = $closestLi.attr("id");
+
+  await storyList.removeStory(currentUser, storyId);
+
+  // re-generate story list
+  await putUserStoriesOnPage();
+}
+
+$ownStories.on("click", ".trash-can", deleteStory);
+
 /** Gets list of stories from server, generates their HTML, and puts on page. */
 
-function putStoriesOnPage() {
-  console.debug("putStoriesOnPage");
+function putUserStoriesOnPage() {
+  console.debug("putUserStoriesOnPage");
 
-  $allStoriesList.empty();
+  $ownStories.empty();
 
-  // loop through all of our stories and generate HTML for them
-  for (let story of storyList.stories) {
-    const $story = generateStoryMarkup(story);
-    $allStoriesList.append($story);
+  if (currentUser.ownStories.length === 0) {
+    $ownStories.append("<h5>No stories added by user yet!</h5>");
+  } else {
+    // loop through all of users stories and generate HTML for them
+    for (let story of currentUser.ownStories) {
+      let $story = generateStoryMarkup(story, true);
+      $ownStories.append($story);
+    }
   }
 
-  $allStoriesList.show();
+  $ownStories.show();
 }
+
+/** Put favorites list on page. */
+
+function putFavoritesListOnPage() {
+  console.debug("putFavoritesListOnPage");
+
+  $favoritedStories.empty();
+
+  if (currentUser.favorites.length === 0) {
+    $favoritedStories.append("<h5>No favorites added!</h5>");
+  } else {
+    // loop through all of users favorites and generate HTML for them
+    for (let story of currentUser.favorites) {
+      const $story = generateStoryMarkup(story);
+      $favoritedStories.append($story);
+    }
+  }
+
+  $favoritedStories.show();
+}
+
+/** Handle favorite/un-favorite a story */
+
+async function toggleStoryFavorite(evt) {
+  console.debug("toggleStoryFavorite");
+
+  const $tgt = $(evt.target);
+  const $closestLi = $tgt.closest("li");
+  const storyId = $closestLi.attr("id");
+  const story = storyList.stories.find(s => s.storyId === storyId);
+
+  // see if the item is already favorited (checking by presence of star)
+  if ($tgt.hasClass("fas")) {
+    // currently a favorite: remove from user's fav list and change star
+    await currentUser.removeFavorite(story);
+    $tgt.closest("i").toggleClass("fas far");
+  } else {
+    // currently not a favorite: do the opposite
+    await currentUser.addFavorite(story);
+    $tgt.closest("i").toggleClass("fas far");
+  }
+}
+
+$storiesLists.on("click", ".star", toggleStoryFavorite);
