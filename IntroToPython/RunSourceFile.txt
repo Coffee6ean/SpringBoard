@@ -1,0 +1,8 @@
+Running a Source File - 
+Running in terminal:
+    -> $ python3 mygame.py
+       You win! Your score is 10
+       $ #back in the shell
+Running in iPython
+    -> $ ipython3
+       In [1]: %run mygame.py
