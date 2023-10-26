@@ -9,5 +9,7 @@ def flip_case(phrase, to_swap):
 
         >>> flip_case('Aaaahhh', 'h')
         'AaaaHHH'
-
     """
+    new_phrase = [ltr.lower() if ltr == to_swap.upper() else ltr.upper() if ltr == to_swap.lower() else ltr for ltr in phrase]
+    return ''.join(new_phrase)
+
