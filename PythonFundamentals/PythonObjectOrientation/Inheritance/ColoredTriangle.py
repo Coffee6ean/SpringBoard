@@ -8,7 +8,7 @@ class ColoredTriangle(Triangle):
     
     def describe(self):
         msg = super().describe()
-        return msg + f"My color is: {self.color}"
+        return msg + f"\n My color is: {self.color}"
 
 # Super -
 # Like in JS, 'super' finds parent class:
