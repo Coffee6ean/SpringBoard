@@ -1,0 +1,26 @@
+Flask is a Web Framework -
+A Framework is like a library, but bigger and more opinionated.
+Usage is similar to the Python Standard Library
+
+Using the Python Standard Library:
+-> from random import choice, randint
+
+Using Flask
+-> from flask import Flask, request
+
+A set of functions, classes, etc. that help you define:
+- Which requests to respond to
+    - http://server/about-us
+    - http://server/post/1
+- How to respond to requests
+    - Shows an 'About Us' page
+    - Show the 1st blog post
+
+What do web applications need to do?
+- Handle web requests
+- Produce dynamic HTML
+- handle forms
+- handle cookies
+- connect to databases
+- provide user log-in/log-out
+- cache pages for performance
