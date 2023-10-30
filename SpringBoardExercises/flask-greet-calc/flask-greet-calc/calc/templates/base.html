@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/">Home Page</a>
+        <a href="/add">Addition - Math Method</a>
+        <a href="/sub">Subtraction - Math Method</a>
+        <a href="/mult">Multiplication - Math Method</a>
+        <a href="/div">Division - Math Method</a>
+
+    </nav>
+    <main id="content">
+        <div>
+            {% block content %}
+                
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>
