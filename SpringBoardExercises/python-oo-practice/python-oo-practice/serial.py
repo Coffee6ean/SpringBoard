@@ -21,6 +21,9 @@ class SerialGenerator:
     def __init__(self, start = 100) -> None: 
         self.origin = start
         self.start = start
+
+    def __repr__(self) -> str:
+        return f'<SerialGenerator start = {self.start}>'
         
     def get_val(self):
         return self.start
@@ -31,5 +34,3 @@ class SerialGenerator:
     
     def reset(self):
         self.start = self.origin
-
-
