@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Questionare{% endblock %}
+{% block content %}
+    <h1>Question {{question_num}}</h1>
+    <div>
+        <p>{{render_question}}</p>
+        <section class="answer">
+            <form action="/answer" method="POST">
+                {% if text_allowed %}
+                    <input type="text" placeholder="Answer">
+                    <button>Submit</button>
+                {% else %}
+                    {% for choice in question_choices %}
+                        <p><input type="radio" name="answer" value="{{ choice }}"> {{ choice }}</p>
+                    {% endfor %}
+                    <button>Submit</button>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+{% endblock %}
