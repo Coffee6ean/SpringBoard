@@ -23,6 +23,8 @@ def print_cookies():
 @app.route("/")
 def index():
     """Homepage."""
+    #session['username'] = "Coffee6ean"
+    #session['leaderboard'] = ['butters', 'steve', 'lady']
     return render_template("index.html")
 
 
