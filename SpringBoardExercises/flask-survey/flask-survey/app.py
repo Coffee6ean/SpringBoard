@@ -12,7 +12,6 @@ def extract(qst):
 
 RESPONSES_KEY = "responses"
 QUESTIONS = list(map(extract, satisfaction_survey.questions))
-RESPONSES = []
 
 #--- Routes ---#
 @app.route('/')
