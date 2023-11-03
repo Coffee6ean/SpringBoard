@@ -5,7 +5,7 @@ def reverse_str(s):
 def isPalindrome(s):
     """Boolean method to check wheter a given string is a palindrome"""
     rev = reverse_str(s)
-    return s == rev.lower()
+    return s.lower() == rev.lower()
 
 def factorial(n):
     if not (isinstance(n, int) and n >= 0):
