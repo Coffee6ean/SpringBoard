@@ -13,7 +13,22 @@ app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-toolbar']
 
 class ColorViewsTestCase(TestCase):
     """Examples of integration tests: testing Flask app."""
+    @classmethod
+    def setUpClass(cls):
+        print('INSIDE SET UP CLASS')
 
+    @classmethod
+    def tearDownClass(cls):
+        print('INSIDE TEAR DOWN CLASS')
+    
+    @classmethod
+    def setUp(cls):
+        print('INSIDE SET UP')
+
+    @classmethod
+    def tearDownClass(cls):
+        print('INSIDE TEAR DOWN')
+    
     def test_color_form(self):
         with app.test_client() as client:
             # can now make requests to flask via `client`
