@@ -14,6 +14,7 @@
 
 # test_client:
 # demo/test_app.py
+from unittest import TestCase
 from app import app
 
 # demo/test_app.py
@@ -26,4 +27,4 @@ class ColorViewsTestCase(TestCase):
 
 # Technically, this comes from “Werkzeug”, a library that Flask uses.
 # This doesn’t start a real web server — but we can make requests to 
-# Flask via 'client'
+# Flask via client
