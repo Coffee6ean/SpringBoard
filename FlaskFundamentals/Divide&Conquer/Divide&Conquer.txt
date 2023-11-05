@@ -1,0 +1,27 @@
+The General Pattern -
+
+Divide and Conquer Description:
+- Given a data set, a divide and conquer algorithm **removes a large 
+    fraction of the data set** from consideration at each step.
+- Typically, the data set must have some additional structure (e.g. be 
+    sorted).
+- Significantly improves time complexity, when it’s applicable 
+    (O(n) -> O(log n))
+
+
+Why Logs?
+A base-2 log (roughly) measures the number of times you can cut a value 
+in half before the value is less than 1.
+
+With divide and conquer, you’re often cutting your data set in half until
+you can’t anymore
+
+Divide and Conquer Tips:
+General Tips:
+- When considering whether to use divide and conquer, make sure your data
+     is properly structured
+    - For example, if your array isn’t sorted, binary search won’t work
+- If you can think of a linear solution quickly, can you use a divide and
+     conquer approach to improve the complexity?
+- Watch out for off by one errors! Managing the left / right pointers can
+     be tricky.
