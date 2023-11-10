@@ -1,0 +1,20 @@
+Blockquotes - 
+
+If you need to call special attention to a quote from another source, or 
+design a pull quote for a magazine article, then Markdown's blockquote 
+syntax will be useful. A blockquote is a sentence or paragraph that's been
+specially formatted to draw attention to the reader.
+
+To create a block quote, all you have to do is preface a line with the 
+"greater than" caret (>).
+
+You can also place a caret character on each line of the quote. This is 
+particularly useful if your quote spans multiple paragraphs. For example:
+    > His words seemed to have struck some deep chord in his own nature. Had he spoken
+    of himself, of himself as he was or wished to be? Stephen watched his face for some
+    moments in silence. A cold sadness was there. He had spoken of himself, of his own
+    loneliness which he feared.
+    >
+    > —Of whom are you speaking? Stephen asked at length.
+    >
+    > Cranly did not answer.
