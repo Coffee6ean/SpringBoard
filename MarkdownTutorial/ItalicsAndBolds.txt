@@ -1,0 +1,23 @@
+Italics and Bolds -
+
+We'll start by learning two basic elements in text formatting: italics and
+bold. In these lessons, you'll notice some formatted red text; this text 
+is actually written in Markdown! Regular Markdown doesn't look any 
+different than regular text, but we're providing some highlighting to make
+it easier to see.
+
+To make a phrase italic in Markdown, you can surround words with an 
+underscore (_ ). For example, _this_ word would become italic.
+
+Similarly, to make phrases bold in Markdown, you can surround words with 
+two asterisks ( ** ). This will **really** get your point across.
+
+Of course, you can use _both italics and bold_ in the same line. You can 
+also span them **across multiple words**.
+
+For the final exercise in this lesson, we're going to make some words bold and italic.
+
+In general, it doesn't matter which order you place the asterisks or 
+underscores. In the box below, make the words "This is unbelievable" both 
+bold and italic. Place the asterisks **_on the outside_**, just to make 
+it more legible.

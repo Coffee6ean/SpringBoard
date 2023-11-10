@@ -1,0 +1,16 @@
+Headers -
+
+Headers are frequently used on websites, magazine articles, and notices, 
+to draw attention to a section. As their name implies, they act like 
+titles or subtitles above sections.
+
+To make headers in Markdown, you preface the phrase with a hash mark (#).
+You place the same number of hash marks as the size of the header you want.
+For example, for a header one, you'd use one hash mark (# Header One), 
+while for a header three, you'd use three (### Header Three).
+
+It's up to you to decide when it's appropriate to use which header. 
+In general, headers one and six should be used sparingly.
+
+You can also mix and match inline styles within headers, such as italicizing
+them.

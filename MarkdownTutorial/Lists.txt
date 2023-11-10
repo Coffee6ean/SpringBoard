@@ -1,0 +1,42 @@
+Lists - 
+
+There are two types of lists in the known universe: unordered and ordered.
+That's a fancy way of saying that there are lists with bullet points, and
+lists with numbers.
+
+To create an unordered list, you'll want to preface each item in the list
+with an asterisk ( * ). Each list item also gets its own line. 
+For example, a grocery list in Markdown might look like this:
+
+    * Milk
+    * Eggs
+    * Salmon
+    * Butter
+
+An ordered list is prefaced with numbers, instead of asterisks. Take a look at this recipe:
+
+    1. Crack three eggs over a bowl
+    2. Pour a gallon of milk into the bowl
+    3. Rub the salmon vigorously with butter
+    4. Drop the salmon into the egg-milk bowl
+
+You can choose to add italics, bold, or links within lists, as you might
+expect.
+
+Occasionally, you might find the need to make a list with more depth, or,
+to nest one list within another. Have no fear, because the Markdown 
+syntax is exactly the same. All you have to do is to remember to indent 
+each asterisk one space more than the preceding item.
+
+    * Calculus, 
+        * A professor
+        * Has no hair
+        * Often wears green
+    * Castafiore
+        * An opera singer, 
+        * Has white hair, 
+        * Is possibly mentally unwell
+
+While you could continue to indent and add sub-lists indefinitely, it's 
+usually a good idea to stop after three levels; otherwise, your text 
+becomes a mess.

@@ -1,0 +1,28 @@
+Paragraphs - 
+
+Markdown has several ways of formatting paragraphs.
+
+Let's take a few lines of poetry as an example. Suppose you want to write
+text that looks like this:
+
+    "Do I contradict myself?
+    Very well then I contradict myself,
+    (I am large, I contain multitudes.)"
+
+Now, you might think that simply typing each verse onto its own line would
+be enough to solve the problem:
+    
+    Do I contradict myself?
+    Very well then I contradict myself,
+    (I am large, I contain multitudes.)
+
+Unfortunately, you'd be wrong! This Markdown would render simply as a 
+single straight line
+
+You can accomplish this by inserting two spaces after each new line. This
+is not possible to see, since spaces are invisible, but it'd look 
+something like this: Each dot ( · ) represents a space on the keyboard.
+
+    Do I contradict myself?··
+    Very well then I contradict myself,··
+    (I am large, I contain multitudes.)
