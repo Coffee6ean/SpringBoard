@@ -1,0 +1,23 @@
+SQL - 
+
+`SELECT * FROM people WHERE age > 21 AND id IS NOT NULL;`
+
+- SQL (Structured Query Language) is a human-readable language for relational databases.
+- Strings in SQL:
+    - case-sensitive: `'Bob'` not same as `'bob'`
+    - single-quotes, not double, around strings.
+- Commands end with a semicolon.
+- SQL keywords are conventionally written in ALL IN CAPS but not required.
+    - `SELECT price FROM books` same as `select price from books`
+
+Types of SQL Statements:
+
+DDL: Data Definition Language
+
+The commands to create, modify, or delete tables, columns & databases.
+Examples: *CREATE*, *ALTER*, *DROP*
+
+**DML: Data Manipulation Language**
+
+The commands to create, read, modify, or delete rows.
+Examples: *SELECT*, *INSERT*, *UPDATE*, *DELETE*

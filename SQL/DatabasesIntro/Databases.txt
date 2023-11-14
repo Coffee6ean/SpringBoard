@@ -1,0 +1,40 @@
+Introduction to Databases -
+
+A database isa collection of data organized to be efficiently stored, 
+accessed, and managed.
+People will interchangeably use the term "database" to refer to database 
+server software, the data records themselves, or the physical machine that 
+is holding the data.
+
+Databases in the Web Stack:
+
+Client (Frontend):        Server (Backend):          Database(Backend):
+- HTML/JS/CSS             - Flask                    - PostgreSQL
+- jQuery                  - Django                   - MySQL
+- React                   - Ruby on Rails            - SQLite
+- Angular                 - Node.js/Express.js       - MongoDB
+- Vue                     - Java Spring              - Cassandra
+
+Relational Databases - Terminology:
+- Model data as rows and columns of tabular data (like spreadsheets)
+- Key Terms include:
+    - RDBMS => Relational Database Management System, e.g PostgreSQL, 
+        MySQL, Oracle, ...
+    - schema => a logical representation of a database including tables
+    - SQL => Structured Query Language, a human-readable language for 
+        querying
+    - Table (aka "relation") => basically a spreadsheet, a set of columns
+        and rows
+    - column => a table attribute, e.g "first_name", "last_name", or 
+        "company"
+    - row => a table record with values for set for columns, e.g 
+        "Matt, Lane, Rithm"
+
+Visualizing Tables:
+
+Example 1: A Books Table
+id | title                                           | author        | page_count
+___|_________________________________________________|_______________|____________
+1  | The Design of Everyday Things                   | Don Norman    | 368
+2  | Flatland                                        | Edwin Abbott  | 96
+3  | Power-Up: Unlocking Hidden Math in Video Games  | Matt Lane     | 264
