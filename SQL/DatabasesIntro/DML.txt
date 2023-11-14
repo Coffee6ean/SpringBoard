@@ -1,0 +1,12 @@
+Data Maniuplation Language -
+
+DML is a subset of SQL that involves querying and manipulating records in 
+existing tables.
+Most of the DML you'll be doing will be related to CRUD operations on rows
+
+What's CRUD?
+Letter  Verb        SQL Commands
+C       Create      INSERT INTO
+R       Read        SELECT … FROM
+U       Update      UPDATE … SET
+D       Delete      DELETE FROM
