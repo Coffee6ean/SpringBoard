@@ -1,0 +1,35 @@
+Modifying Data -
+
+Creating data with *INSERT*:
+-- Inserting a new book with title and author
+    INSERT INTO books (title, author)
+      VALUES ('The Iliad', 'Homer');
+​
+-- Inserting several books with titles only
+    INSERT INTO books (title) VALUES
+      ('War and Peace'),
+      ('Emma'),
+      ('Treasure Island');
+​
+Note: You can combine *INSERT* and SELECT to copy data from another table. 
+    INSERT INTO books (title, author)
+      SELECT title, author
+        FROM some_other_table
+        WHERE price < 10;
+    
+Updating data with *UPDATE*:
+-- Matt is a prolific writer
+    UPDATE books SET author = 'Matt';
+​
+-- JK, not that prolific!
+    UPDATE books SET author = 'Jane Austen' WHERE title = 'Emma';
+
+Deleting data with *DELETE*:
+-- delete Emma
+    DELETE FROM books WHERE title = 'Emma';
+​
+-- delete long books
+    DELETE FROM books WHERE num_pages > 200;
+​
+-- delete all books!
+    DELETE FROM books;
