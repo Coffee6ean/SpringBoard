@@ -1,0 +1,39 @@
+Relational Databases -
+
+Data Example: Movies
+id  | title                         |  studio
+----+-------------------------------+--------------------------------------
+1   | Star Wars: The Force Awakens  |  Walt Disney Studios Motion Pictures
+2   | Avatar                        |  20th Century Fox
+3   | Black Panther                 |  Walt Disney Studios Motion Pictures
+4   | Jurassic World                |  Universal Pictures
+5   | Marvel’s The Avengers         |  Walt Disney Studios Motion Pictures
+
+So much duplication. What if we want other info about studios?
+
+A Better Way:
+
+id | title                         | studio_id
+---+-------------------------------+-----------
+1  | Star Wars: The Force Awakens  |  1
+2  | Avatar                        |  2
+3  | Black Panther                 |  1
+4  | Jurassic World                |  3
+5  | Marvel’s The Avengers         |  1
+
+id | name                                |   founded_in
+---+-------------------------------------+----------------
+1  | Walt Disney Studios Motion Pictures |   1953-06-23
+2  | 20th Century Fox                    |   1935-05-31
+3  | Universal Pictures                  |   1912-04-30
+
+
+One-to-Many (1:M):
+- Our 'studio_id' column provides us with a reference to the corresponding 
+    record in the 'studios' table by its primary key.
+- Typically this is implemented with a *foreign key constraint*, which 
+    makes sure every 'studio_id' exists somewhere in the 'studios' table.
+- One-to-Many (1:M) in the sense that one studio *has many* movies, but 
+    each movie *has one* studio.
+- In this example, we can say 'movies' is the *referencing* table, and 
+    'studios' is the *referenced* table.
