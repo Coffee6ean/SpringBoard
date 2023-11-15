@@ -1,0 +1,34 @@
+SQL Operators -
+
+Operators are used to build more complicated queries They involve reserved 
+SQL keywords. These include IN, NOT IN, BETWEEN, AND, and OR
+
+An example:
+-- basic WHERE clause
+    SELECT title FROM books WHERE author = 'J. K. Rowling';
+​
+-- basic IN clause
+    SELECT * FROM books WHERE id IN (1, 12, 30);
+​
+-- grab books of moderate length
+    SELECT title, author
+    FROM books
+    WHERE page_count BETWEEN 300 AND 500;
+
+Another example:
+-- short, cheap books
+    SELECT title, author
+      FROM books
+      WHERE price < 10
+        AND page_count < 150;
+    ​
+-- new books or expensive books
+    SELECT title, author, publication_date, price
+      FROM books
+      WHERE publication_date > '01-01-2017'
+        OR price > 100;
+    ​
+-- books ordered by price
+    SELECT title, price
+      FROM books
+      ORDER BY price;
