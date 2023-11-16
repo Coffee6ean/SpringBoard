@@ -1,0 +1,145 @@
+Joining Tables -
+
+JOIN Operation:
+The JOIN operation allows us to create a table in memory by combining 
+information from different tables. Data from tables is matched according 
+to a join condition.
+Most commonly, the join condition involves comparing a foreign key from 
+one table and a primary key in another table.
+
+Setting Up the Data:
+    CREATE TABLE studios
+      (id SERIAL PRIMARY KEY,
+       name TEXT,
+       founded_in TEXT);
+    
+    CREATE TABLE movies
+      (id SERIAL PRIMARY KEY,
+       title TEXT,
+       release_year INTEGER,
+       runtime INTEGER,
+       rating TEXT,
+       studio_id INTEGER REFERENCES studios (id));
+    ​
+    INSERT INTO studios
+      (name, founded_in)
+    VALUES
+      ('Walt Disney Studios Motion Pictures', '1953-06-23'),
+      ('20th Century Fox', '1935-05-31'),
+      ('Universal Pictures', '1912-04-30');
+    
+    INSERT INTO movies
+      (title, release_year, runtime, rating, studio_id)
+    VALUES
+      ('Star Wars: The Force Awakens', 2015, 136, 'PG-13', 1),
+      ('Avatar', 2009, 160, 'PG-13', 2),
+      ('Black Panther', 2018, 140, 'PG-13', 1),
+      ('Jurassic World', 2015, 124, 'PG-13', 3),
+      ('Marvel’s The Avengers', 2012, 142, 'PG-13', 1);
+
+Our First Join:
+
+```sql
+SELECT title, name
+  FROM movies
+  JOIN studios
+    ON movies.studio_id = studios.id;
+```
+
+```sql
+SELECT title, name
+  FROM movies
+  INNER JOIN studios
+    ON movies.studio_id = studios.id;
+```
+
+*JOIN* and *INNER JOIN* are the same, the *INNER* keyword is optional.
+
+Types of Joins:
+
+There are two primary types of joins: 'inner' and 'outer'.
+
+- **Inner**
+    Only the rows that match the condition in both tables.
+- **Outer**
+    'Left' - All of the rows from the first table (left), combined with 
+        matching rows from the second table (right).
+    'Right' - The matching rows from the first table (left), combined with
+        all the rows from the second table (right).
+    'Full' - All the rows from both tables (left and right).
+
+Joins in Practice:
+Practically speaking, you’ll mostly be using Inner Joins
+Outer joins can be helpful when trying to find rows in one table with no 
+match in another table (e.g. an independent movie with no studio).
+
+Outer join example:
+-- this query will include the indie movie
+    SELECT name FROM movies
+      LEFT JOIN studios
+        ON movies.studio_id = studios.id;
+
+Many-to-Many (M:N):
+
+Let’s see what the movies, actors and roles tables look like
+
+id  |    title                | release_year  | runtime  | rating
+----+-------------------------+---------------+----------+----------
+1   |  Marvel’s The Avengers  |  2012         |  142     |  PG-13
+2   |  Avatar                 |  2009         |  160     |  PG-13
+3   |  Star Wars: Episode I   |  1999         |  133     |  PG
+
+id  |  first_name  |  last_name  |  birth_date
+----+--------------+-------------+--------------
+1   |  Scarlett    |  Johansson  |  1984-11-22
+2   |  Samuel L    |  Jackson    |  1948-12-21
+3   |  Kristen     |  Wiig       |  1973-08-22
+
+id  |  movie_id  |  actor_id
+----+------------+------------
+1   |    1       |    1
+2   |    1       |    2
+3   |    3       |    2
+
+Visualizing the Relationships:
+Check out [this color-coded spreadsheet]
+(https://docs.google.com/spreadsheets/d/1uFoV781nebAPbtnsQ_qYstib2Mtg99yKVUDXCnXMssE/edit?usp=sharing).
+
+Join Tables:
+- The 'roles' table in our current schema is an example of a join table 
+  (aka an associative table aka a mapping table)
+- A join table serves as a way to connect two tables in a many-to-many 
+  relationship
+- The join table consists of, at a minimum, two foreign key columns to the
+  two other tables in the relationship
+- It is completely valid to put other data in the join table 
+  (e.g. how much was an actor paid for the role)
+- Sometimes the join table has a nice name (when it has meaning on its 
+  own, e.g. 'roles'), but you can also just call it 'table1_table2'
+
+Querying a Many-to-Many:
+Connecting movies and actors:
+  SELECT * FROM movies
+    JOIN roles
+      ON movies.id = roles.movie_id
+    JOIN actors
+      ON roles.actor_id = actors.id;
+​
+Selecting certain columns, using table alias shorthand:
+  SELECT m.title, a.first_name, a.last_name
+    FROM movies m
+    JOIN roles r
+      ON m.id = r.movie_id
+    JOIN actors a
+      ON r.actor_id = a.id;
+​
+Get all the id, first name and last name of the actors that have been in 
+more than one movie:
+  SELECT a.id, a.first_name, a.last_name
+   FROM movies m
+   JOIN roles r
+     ON m.id = r.movie_id
+   JOIN actors a
+     ON r.actor_id = a.id
+   GROUP BY a.id, a.first_name, a.last_name
+   HAVING count(*) >= 2;
