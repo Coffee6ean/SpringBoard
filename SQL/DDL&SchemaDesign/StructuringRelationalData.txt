@@ -1,0 +1,111 @@
+Structuring Relational Data -
+
+Modeling Our Movies Database:
+From our joins exercise involving movies, studios, actors, and roles, we 
+can see that:
+- one studio has many movies
+- one actor has many roles
+- one movie has many actors
+
+Before we write out the DDL, we’ll visualize this a few ways.
+
+As A Spreadsheet:
+Check out [this color-coded spreadsheet]
+(https://docs.google.com/spreadsheets/d/1uFoV781nebAPbtnsQ_qYstib2Mtg99yKVUDXCnXMssE/edit?usp=sharing).
+
+Crow’s Foot Notation:
+Preferably, we will draw diagrams with Crow’s Foot Notation, which is a 
+standard way to represent
+                                    _______________
+                                   |    studios    | 
+                                   |---------------|
+                                   |      id       |
+                                   |     name      |
+                                   |   founded_in  |
+                                   |_______________|  
+                                           |
+                                           |
+                                     ______^_______            
+        _____________               |    movies    |
+       |    actors   |              |--------------|
+       |-------------|              |      id      |
+       |     id      |              |     title    |
+       |  first_name |              | release_year |
+       |  last_name  |              |    runtime   |
+       |  birth_date |              |    rating    |
+        _____________|              |   studio_id  |
+                    \               |______________|
+                     \                  /
+                      \                /
+                       ^______________^
+                       |    roles     |
+                       |--------------|
+                       |      id      |
+                       |   movie_id   |
+                       |   actor_id   |
+                       |______________|
+
+DDL for Movies:
+Let’s look at the DDL from the earlier example
+
+    ```sql
+    CREATE TABLE studios (
+      id SERIAL PRIMARY KEY,
+      name TEXT NOT NULL,
+      founded_in DATE
+    );
+    ​
+    CREATE TABLE movies (
+      id SERIAL PRIMARY KEY,
+      title TEXT NOT NULL,
+      release_year INTEGER,
+      runtime INTEGER,
+      rating TEXT,
+      studio_id INTEGER REFERENCES studios
+    );
+    ```
+Controlling Delete Behavior with DDL:
+
+    ```sql
+    CREATE TABLE movies (
+      id SERIAL PRIMARY KEY,
+      title TEXT NOT NULL,
+      release_year INTEGER,
+      runtime INTEGER,
+      rating TEXT,
+      studio_id INTEGER REFERENCES studios ON DELETE SET NULL
+    );
+    ​
+    CREATE TABLE movies (
+      id SERIAL PRIMARY KEY,
+      title TEXT NOT NULL,
+      release_year INTEGER,
+      runtime INTEGER,
+      rating TEXT,
+      studio_id INTEGER REFERENCES studios ON DELETE CASCADE
+    );
+    ```
+Many-to-Many DDL:
+
+    ```sql
+    CREATE TABLE movies (
+      id SERIAL PRIMARY KEY,
+      title TEXT NOT NULL,
+      release_year INTEGER NOT NULL,
+      runtime INTEGER NOT NULL,
+      rating TEXT NOT NULL
+    );
+    ​
+    CREATE TABLE actors (
+      id SERIAL PRIMARY KEY,
+      first_name TEXT NOT NULL,
+      last_name TEXT,
+      birth_date DATE NOT NULL
+    );
+    ​
+    CREATE TABLE roles (
+      id SERIAL PRIMARY KEY,
+      movie_id INTEGER REFERENCES movies ON DELETE CASCADE,
+      actor_id INTEGER REFERENCES actors ON DELETE CASCADE
+    );
+    ```

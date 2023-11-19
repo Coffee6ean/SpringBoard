@@ -27,8 +27,7 @@ CREATE TABLE subreddits
   is_private BOOLEAN DEFAULT false
 );
 
-
-INSERT INTO users  (username, password)
+INSERT INTO users (username, password)
 VALUES
 ('graylady',  'askldjas'),
 ('stevie-chicks', 'asdkljasl');
