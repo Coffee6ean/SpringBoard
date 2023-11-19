@@ -1,0 +1,50 @@
+Indexing -
+
+A *database index* is a special data structure that efficiently stores 
+column values to speed up row retrieval via *SELECT* and *WHERE* 
+(i.e. “read”) queries.
+
+For instance, if you place an index on a *username* column in a *users* 
+table, any query using username will execute faster since fewer rows have
+to be scanned due to the efficient structure.
+
+Index Efficiency:
+In general, database software (including PostgreSQL) use tree-like data 
+structures to store the data, which can retrieve values in logarithmic 
+time O(lg(N)) instead of linear O(N) time.
+
+Translation => If we have 1,000,000 rows and are looking for a single 
+column value, instead of examining every row, we can examine approximately
+log2(1000000) ≈ 20 rows to get our answer, which is an incredible 
+improvement
+
+Why Not Index Everything?
+There is a tradeoff with indexing! For every indexed column, a copy of 
+that column’s data has to be stored as a tree, which can take up a lot of
+space.
+
+Also, every INSERT and UPDATE query becomes more expensive, since data in 
+both the regular table AND the index have to be dealt with.
+
+How to Create an Index in PostgreSQL:
+Indexing is part of DDL, but indexes can be created or dropped at any time.
+The more records in the database at the time of creation, the slower the 
+indexing process will be.
+
+    ```sql
+    CREATE INDEX index_name ON table_name (column_name);
+    ```
+
+You can also create a multi-column index, which is useful if you are 
+constantly querying by two fields at once (e.g. first_name and last_name):
+    
+    ```sql
+    CREATE INDEX index_name ON table_name (column1_name, column2_name);
+    ```
+
+How to Drop an Index in PostgreSQL:
+Drop an index:
+
+    ```sql
+    DROP INDEX full_name;
+    ```

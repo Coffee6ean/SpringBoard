@@ -1,0 +1,38 @@
+Best Practices -
+
+Normalization:
+Normalization is a database design technique which organizes tables in a 
+manner that reduces redundancy and dependency of data.
+It divides larger tables to smaller tables and links them using relationships.
+
+Normalization Bad Example:
+Consider the following products table. There are strings with multiple 
+values in the 'color' column, making it difficult to query.
+
+products
+id  |    color     |  price
+----+--------------+----------
+1   |  red, green  |  05.00
+2   |    yellow    |  10.00
+
+Normalized Example:
+
+products
+ id  |  price 
+-----+---------
+ 1   |  05.00 
+ 2   |  10.00 
+
+colors
+ id  | color 
+-----+---------
+ 1   | red 
+ 2   | green 
+ 3   | yellow 
+
+products_colors
+id  | color_id  |  product_id
+----+-----------+--------------
+1   |    1      |     1
+2   |    2      |     1
+3   |    3      |     2
