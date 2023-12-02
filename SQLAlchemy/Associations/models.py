@@ -31,6 +31,9 @@ class Employee(db.Model):
     state = db.Column(db.Text, nullable=False, default='CA')
     dept_code = db.Column(db.Text, db.ForeignKey('departments.dept_code'))
 
+    # Magic line
+    # Sets up a dept attribute on each instance of Employee
+    # SQLA will populate it with data from the departments table automatically
     dept = db.relationship('Department', backref='employees')
 
     def __repr__(self):
