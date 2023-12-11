@@ -76,4 +76,3 @@ $ git status
 
 $ git commit ...
 ```
-
