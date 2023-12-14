@@ -10,7 +10,9 @@ Can rearrange without having to move other items in memory.
 This is a lot faster than having to move everything around in a big list.
 
 ## Node:
+
 ![alt text][pic]
+
 ***ant***, ***bee***, and ***caterpillar*** are nodes.
 A basic Node has two attributes:
 | Property       | Description                                                              |
@@ -84,9 +86,11 @@ let insects = new LinkedList();
 
 ### In Pictures…
 An empty Linked List:
+
 ![alt text][pic4]
 
 A Linked List with nodes in it:
+
 ![alt text][pic5]
 
 ### Things you might want to do

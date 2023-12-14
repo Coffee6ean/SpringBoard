@@ -14,6 +14,7 @@ Arrangement of items at equally-spaced addresses in memory
 ```
 
 In memory:
+
 ![alt text][pic]
 
 Therefore, inserting or deleting an item requires moving everything after it.
@@ -43,6 +44,7 @@ This lets an array store different types of data, or different length data.
 ```js
 ["ant", "bee", "caterpillar"]
 ```
+
 ![alt text][pic2]
 
 ### What Does JavaScript Use?

@@ -38,10 +38,14 @@ _demo/linkedlist.js_
 ## Appending/Removing Nodes:
 ### Append a Node
 **Q:** How do we append a node to the end of a linked list?
+
 ![alt text][pic]
+
 **A:** Walk to the end and add it there.
 (But wouldn’t it be faster to append if we “know” the end?)
+
 ![alt text][pic2]
+
 This way, appending is always ***O(1)***
 
 This becomes easier if we add a ***tail*** attribute onto our list. This way, we don’t have to traverse the list every time we add a node.
@@ -61,9 +65,11 @@ What do we need to do to add “dragonfly”?
 - make ***list.tail*** a reference to ***dragonfly***
 
 Success!
+
 ![alt text][pic3]
 
 Don’t forget to handle case of an empty list!
+
 ![alt text][pic4]
 
 What do we need to do to add “ant”?
@@ -72,6 +78,7 @@ What do we need to do to add “ant”?
 - make ***list.tail*** a reference to ***ant***
 
 Success!
+
 ![alt text][pic5]
 
 _demo/linkedlist.js_
