@@ -175,6 +175,7 @@ find(insects, "ant");
 
 ## Doubly-Linked Lists:
 Sometimes, linked lists have ***next*** and a ***prev*** (the “previous node”)
+
 ![alt text][pic8]
 
 While doubly-linked lists are relatively common and useful in actual programming, most interview questions are asking about a singly-linked list.
