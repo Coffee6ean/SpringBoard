@@ -59,6 +59,9 @@ class LinkedList {
  ...
 }
 ```
+
+![alt text][pic3]
+
 What do we need to do to add “dragonfly”?
 - make new node ***dragonfly***
 - make ***caterpillar.next*** a reference to ***dragonfly***
@@ -66,11 +69,11 @@ What do we need to do to add “dragonfly”?
 
 Success!
 
-![alt text][pic3]
+![alt text][pic4]
 
 Don’t forget to handle case of an empty list!
 
-![alt text][pic4]
+![alt text][pic5]
 
 What do we need to do to add “ant”?
 - make new node ***ant***
@@ -79,7 +82,7 @@ What do we need to do to add “ant”?
 
 Success!
 
-![alt text][pic5]
+![alt text][pic6]
 
 _demo/linkedlist.js_
 ```js
@@ -105,7 +108,7 @@ What would you need to change to remove:
 - “bee”
 - “caterpillar”
 
-![alt text][pic6]
+![alt text][pic7]
 
 All we are doing to “remove” a node from the list is redirecting the reference (or ***next***) of a node to the one after the node we’re looking for.
 There are many tricky ways of doing this.
@@ -172,7 +175,7 @@ find(insects, "ant");
 
 ## Doubly-Linked Lists:
 Sometimes, linked lists have ***next*** and a ***prev*** (the “previous node”)
-![alt text][pic7]
+![alt text][pic8]
 
 While doubly-linked lists are relatively common and useful in actual programming, most interview questions are asking about a singly-linked list.
 
@@ -181,14 +184,16 @@ While doubly-linked lists are relatively common and useful in actual programming
 
 [pic]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa0f8012e-b610-4331-8fa7-ca5807ce812d%2Fgraphviz-dcbe8a2eb9b7a9d00bbb68a7d33cebccf9b524fb.svg?table=block&id=3f800aee-f87d-4b7e-9265-3a85eabe8e48&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Append(Undefined End)"
 
-[pic2]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/859414ce-8d4a-47f8-8b5a-7bb03089294d/graphviz-590103281274b21ddd4b06544ed2cdaeadeb7d38.svg "Linked List - Append(Defined End)"
+[pic2]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F859414ce-8d4a-47f8-8b5a-7bb03089294d%2Fgraphviz-590103281274b21ddd4b06544ed2cdaeadeb7d38.svg?table=block&id=acfe8be9-be88-4963-abbd-78ce34e86ca3&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Append(Defined End)"
 
-[pic3]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1080f27-10bf-41b4-a606-ecf7046b7d85/graphviz-316e2f190737ac6028ea6b3d4a8ef4ed775e1d79.svg "Linked List - Tail(Defined End)"
+[pic3]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec5733-3cae-442b-b55d-2bcc2e798b83%2Fgraphviz-dd448c604aef49e8f2578225d76ec912c1f73827.svg?table=block&id=d00e2fa1-81d8-4a58-82ac-a0137ed5359c&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Tail(Defined End)"
 
-[pic4]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c8ab4c25-fb1d-4dde-a0c3-0f86642d2a01/graphviz-12dbf0070a7eb01bfe84e5ddd6ae6116f5f846e8.svg "Linked List - Empty List"
+[pic4]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb1080f27-10bf-41b4-a606-ecf7046b7d85%2Fgraphviz-316e2f190737ac6028ea6b3d4a8ef4ed775e1d79.svg?table=block&id=1b0701f9-66ee-4384-8c18-6fca20783e76&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Append to Tail"
 
-[pic5]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd7ef729-785c-43f6-a0ee-b498124f8c71%2Fgraphviz-befa926b09f4a70baadb8346d81ebd475f124afc.svg?table=block&id=f1e3407e-4bb0-4b41-9a56-f9995e894b28&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Single Node"
+[pic5]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc8ab4c25-fb1d-4dde-a0c3-0f86642d2a01%2Fgraphviz-12dbf0070a7eb01bfe84e5ddd6ae6116f5f846e8.svg?table=block&id=b4065d1d-bbda-413e-87ac-56133cde8699&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Empty List"
 
-[pic6]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb59f46b-59cb-426c-83b6-a9ddfaecb515/graphviz-282a06741a687b4b9a0baa3c3beac59fbe49cd94.svg "Linked List - Remove Node"
+[pic6]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd7ef729-785c-43f6-a0ee-b498124f8c71%2Fgraphviz-befa926b09f4a70baadb8346d81ebd475f124afc.svg?table=block&id=f1e3407e-4bb0-4b41-9a56-f9995e894b28&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Single Node"
 
-[pic7]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f9b597fd-1c23-4c9f-ab00-72d239146b6d/graphviz-f1a45372bb1c8981c345a49c383adfa7c86b1afc.svg "Linked List - Doubly Linked List"
+[pic7]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbb59f46b-59cb-426c-83b6-a9ddfaecb515%2Fgraphviz-282a06741a687b4b9a0baa3c3beac59fbe49cd94.svg?table=block&id=926c99ef-b7ae-41ed-aca7-3b6579c79593&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Remove Node"
+
+[pic8]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff9b597fd-1c23-4c9f-ab00-72d239146b6d%2Fgraphviz-f1a45372bb1c8981c345a49c383adfa7c86b1afc.svg?table=block&id=9eb20ff7-0f91-4b96-bc79-2aeb8ed204b0&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Doubly Linked List"

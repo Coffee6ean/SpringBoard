@@ -100,12 +100,12 @@ A Linked List with nodes in it:
 - Insert at specific position
 - Remove a node
 
-[pic]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/401b7652-27b8-4938-81d1-311daa2b92e5/graphviz-9f6d3afd1fcffc954507216eef84cd1cd4caba7b.svg "Linked List - Single Linked"
+[pic]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F401b7652-27b8-4938-81d1-311daa2b92e5%2Fgraphviz-9f6d3afd1fcffc954507216eef84cd1cd4caba7b.svg?table=block&id=bacf9910-de62-4fe7-a286-cb0030bc17cf&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Single Linked"
 
-[pic2]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0daf9c80-7bab-4d4f-ae3b-18314d4283d0/graphviz-8dc9c57ef981ae722ab78c348baeae871346906b.svg "Linked List - Remove Node"
+[pic2]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0daf9c80-7bab-4d4f-ae3b-18314d4283d0%2Fgraphviz-8dc9c57ef981ae722ab78c348baeae871346906b.svg?table=block&id=28e83c23-ffd4-48d5-a99b-ce2d34d77878&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Remove Node"
 
 [pic3]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8303053c-7180-41dd-af77-623e1d28180e%2Fgraphviz-47db8833b9babda521c0baf524ba3c53ce176bd0.svg?table=block&id=6f7ccf1f-b0d2-46b4-94c4-3eb9ee8c28cf&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Nodes"
 
-[pic4]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f2a2e47-0fdd-4686-855f-ba6989ff0327/graphviz-b511f4ef91c1207372b8399fafa52940c94b3f9e.svg "Linked List - Empty List"
+[pic4]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0f2a2e47-0fdd-4686-855f-ba6989ff0327%2Fgraphviz-b511f4ef91c1207372b8399fafa52940c94b3f9e.svg?table=block&id=53d00c2f-204a-4311-9639-93773f215a05&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - Empty List"
 
-[pic 5]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91638b74-dbe8-4cdd-b35b-f482b39a76d3/graphviz-f131717711a4cdf15aa53ff1825064fde5b2f1ef.svg "Linked List - List With Nodes"
+[pic5]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F91638b74-dbe8-4cdd-b35b-f482b39a76d3%2Fgraphviz-f131717711a4cdf15aa53ff1825064fde5b2f1ef.svg?table=block&id=ff7eb6e2-4c91-4254-8254-6f5319af5717&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Linked List - List With Nodes"

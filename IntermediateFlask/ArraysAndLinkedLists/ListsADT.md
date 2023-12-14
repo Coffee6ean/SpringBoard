@@ -52,6 +52,6 @@ Indirect arrays — since you can store different-length things in them
 
 It’s complicated, though: some implementations have specialized or adaptive structures to handle edge cases like sparse arrays
 
-[pic]: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26a38e9f-f1bb-447b-8aeb-b10e2e57dfba/graphviz-8f3f59f3ccd45423109f59e0f500b8659f59cb0d.svg "In-memory Array"
+[pic]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F26a38e9f-f1bb-447b-8aeb-b10e2e57dfba%2Fgraphviz-8f3f59f3ccd45423109f59e0f500b8659f59cb0d.svg?table=block&id=9863f33d-d996-413e-8714-313f049e8eab&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "In-memory Array"
 
 [pic2]: https://lessons.springboard.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4832407b-fa38-4fcd-8d62-d30da4009396%2Fgraphviz-acc423eab7a71eed4f2350c0fce916adeab2c212.svg?table=block&id=2a4e4b12-e327-455e-be7e-b4399a505c56&spaceId=163f1722-85e9-4a3c-adba-457a91094f00&userId=&cache=v2 "Indirect Array"
