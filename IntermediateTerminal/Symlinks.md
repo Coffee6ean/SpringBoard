@@ -1,4 +1,5 @@
 # Symbolic Links -
+
 To create a symbolic link, we use the ***-s*** flag when creating a link.
 
 The major difference in a **symbolic link** is that this command will not

@@ -1,4 +1,5 @@
 # Links - 
+
 Since we have files and folders located all over our file system, it becomes 
 difficult to identify where many of these are located. Fortunately, we can 
 create a link (also known as an alias) to a file or folder using the ***ln*** 

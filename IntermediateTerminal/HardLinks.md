@@ -1,4 +1,5 @@
 # Hard Links -
+
 A ***hard link*** is essentially a carbon copy of the file that we're linking to.
 So all chnages will be automatically updated or synced to the linked files.
 
