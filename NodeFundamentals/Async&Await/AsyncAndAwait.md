@@ -1,4 +1,4 @@
-# Using *async* / *await*
+# Using *async* / *await* -
 
 ### Object *async*
 - We can also place ***async*** functions as methods inside objects!

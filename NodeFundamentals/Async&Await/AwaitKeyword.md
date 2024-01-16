@@ -1,4 +1,4 @@
-# The *await* keyword
+# The *await* keyword -
 
 ### *await* Overview
 - Inside of an ***async*** function, we can use the ***await*** keyword
