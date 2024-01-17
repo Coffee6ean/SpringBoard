@@ -1,4 +1,4 @@
-# Deques - 
+# Deques (Double Ended Queue) - 
 
 An *ADT* for a “double-ended queue” — push, pop, shift & unshift.
 Less common than stack or queue.
