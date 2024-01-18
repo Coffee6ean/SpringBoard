@@ -1,7 +1,7 @@
 # Our First Express App -
 
 ### Getting started
-```batch
+```bash
 $ mkdir first-express-app
 $ cd first-express-app
 $ npm init -y
@@ -11,12 +11,12 @@ $ npm install express
 ### Nodemon
 - Nodemon restarts server when you edit files or if the server crashes.
 - Install globally, so you can use in any project:
-```batch
+```bash
 $ npm install --global nodemon
 ```
 
 To start server:
-```batch
+```bash
 $ nodemon app.js
 ```
 
