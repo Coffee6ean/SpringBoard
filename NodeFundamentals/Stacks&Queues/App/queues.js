@@ -1,4 +1,4 @@
-// Queues as Array => Not optimal, since removing takes O(n)
+// Queues as Array => Not optimal; removing takes O(n)
 class Queue {
     constructor() {
         this.data = [];
@@ -25,4 +25,4 @@ while(jobs.length) {
 }
 */
 
-// Queues as Linked List / Doubly Linked List => Optimal, adding and removing O(1)
+// Queues as Linked List / Doubly Linked List => Optimal; adding and removing O(1)
