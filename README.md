@@ -4,7 +4,7 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 
 ## Modules:
 
-### 1. [Module 1: Introduction to Coding](module-1/)
+### 1. Module 1: Introduction to Coding
 - [DeveloperFundamentals](module-1/DeveloperFundamentals)
 - [ES2015](module-1/ES2015)
 - [HowTheWebWorks](module-1/HowTheWebWorks)
@@ -14,29 +14,28 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 - [ObjectOrientedProgramming](module-1/ObjectOrientedProgramming)
 - [PythonFundamentals](module-1/PythonFundamentals)
 
-### 2. [Module 2: Advanced Topics](module-2/)
+### 2. Module 2: Advanced Topics
 - [AdvancedArrayMethods](module-2/AdvancedArrayMethods)
 - [DeveloperFundamentals](module-2/DeveloperFundamentals)
 - [ES2015](module-2/ES2015)
 - [JasmineTesting](module-2/JasmineTesting)
 - [ObjectOrientedProgramming](module-2/ObjectOrientedProgramming)
 
-### 3. [Module 3: Web Development](module-3/)
-- [HowTheWebWorks](module-3/HowTheWebWorks)
-- [IntroToDOM](module-3/IntroToDOM)
+### 3. Module 3: Web Development
+- [How The Web Works](module-3/HowTheWebWorks)
+- [Intro To DOM](module-3/IntroToDOM)
 - [TwitterBootstrap](module-3/TwitterBootstrap)
-- [WebFundamentals](module-3/WebFundamentals)
+- [Web Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/1.WebFundamentals)
 - [jQuery](module-3/jQuery)
 
-### 4. [Module 4: Backend Development](module-4/)
-- [FlaskFundamentals](module-4/FlaskFundamentals)
-- [HatchwaysProjects](module-4/HatchwaysProjects)
-- [IntermediateFlask](module-4/IntermediateFlask)
-- [SQL](module-4/SQL)
-- [SQLAlchemy](module-4/SQLAlchemy)
-- [SpringBoardExercises](module-4/SpringBoardExercises)
+### 4. Module 4: Backend Development
+- [Flask Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/13.FlaskFundamentals)
+- [Intermediate Flask](https://github.com/Coffee6ean/SpringBoard/tree/main/16.IntermediateFlask)
+- [SQL](https://github.com/Coffee6ean/SpringBoard/tree/main/14.SQL)
+- [SQL Alchemy](https://github.com/Coffee6ean/SpringBoard/tree/main/15.SQLAlchemy)
+- [Express Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/18.ExpressFundamentals)
 
-### 5. [Module 5: Final Project](module-5/)
+### 5. Module 5: Exercises
 - [HatchwaysProjects](module-5/HatchwaysProjects) (if it involves a final project)
 - [SpringBoardExercises](module-5/SpringBoardExercises) (if they are part of the final project requirements)
 
