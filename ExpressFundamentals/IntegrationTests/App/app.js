@@ -1,5 +1,5 @@
 const express = require('express');
-const catRoutes = require('./cats');
+const catRoutes = require('./routes/cats');
 const ExpressError = require('../../Routing&Middleware/App/expressError');
 
 const app = express();

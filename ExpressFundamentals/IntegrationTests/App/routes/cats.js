@@ -1,17 +1,23 @@
 const express = require('express');
 const router = new express.Router();
-const ExpressError = require('../../Routing&Middleware/App/expressError');
-const cats = require('./fakeDB');
+const ExpressError = require('../../../Routing&Middleware/App/expressError');
+const cats = require('../fakeDB');
 
 router.get('/', (req, res) => {
     res.json({cats});
 });
 
-router.post('/', (req, res) => {
-    const newCat = {name: req.body.name};
-    console.log('New cat:', newCat);
-    cats.push(newCat);
-    res.status(201).json({cat: newCat});
+router.post('/', (req, res, next) => {
+    try {
+        if(!req.body.name) throw new ExpressError('Name is required', 400);
+        const newCat = {name: req.body.name};
+        console.log('New cat:', newCat);
+        cats.push(newCat);
+        return res.status(201).json({cat: newCat});
+    } catch(err) {
+        return next(err)
+    }
+    
 });
 
 router.get('/:name', (req, res) => {
@@ -32,7 +38,7 @@ router.patch('/:name', (req, res) => {
 });
 
 router.delete('/:name', (req, res) => {
-    const foundCat = cats.find(cat => cat.name === req.params.name);
+    const foundCat = cats.findIndex(cat => cat.name === req.params.name);
     if(foundCat === -1) {
         throw new ExpressError('Cat not found', 404);
     }
