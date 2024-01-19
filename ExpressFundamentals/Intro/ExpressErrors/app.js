@@ -69,7 +69,3 @@ app.use(function (err, req, res, next) { //Note the 4 parameters!
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-
-
-
-
