@@ -35,8 +35,8 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 - [Express Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/18.ExpressFundamentals)
 
 ### 5. Module 5: Exercises
-- [Hatchways Projects](module-5/HatchwaysProjects) (if it involves a final project)
-- [SpringBoard Exercises](module-5/SpringBoardExercises) (if they are part of the final project requirements)
+- [Hatchways Projects](https://github.com/Coffee6ean/SpringBoard/tree/main/HatchwaysProjects)
+- [SpringBoard Exercises](https://github.com/Coffee6ean/SpringBoard/tree/main/SpringBoardExercises)
 
 ## How to Use:
 
