@@ -33,6 +33,8 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 - [SQL](https://github.com/Coffee6ean/SpringBoard/tree/main/14.SQL)
 - [SQL Alchemy](https://github.com/Coffee6ean/SpringBoard/tree/main/15.SQLAlchemy)
 - [Express Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/18.ExpressFundamentals)
+- [Node Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/19.NodeFundamentals)
+- [Express and Postgress](https://github.com/Coffee6ean/SpringBoard/tree/main/20.Express&Postgres)
 
 ### 5. Module 5: Exercises
 - [Hatchways Projects](https://github.com/Coffee6ean/SpringBoard/tree/main/HatchwaysProjects)
