@@ -5,28 +5,27 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 ## Modules:
 
 ### 1. Module 1: Introduction to Coding
-- [DeveloperFundamentals](module-1/DeveloperFundamentals)
-- [ES2015](module-1/ES2015)
-- [HowTheWebWorks](module-1/HowTheWebWorks)
-- [IntroToDOM](module-1/IntroToDOM)
-- [JavaScriptEvents](module-1/JavaScriptEvents)
-- [MarkdownTutorial](module-1/MarkdownTutorial)
-- [ObjectOrientedProgramming](module-1/ObjectOrientedProgramming)
-- [PythonFundamentals](module-1/PythonFundamentals)
+- [Developer Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/2.DeveloperFundamentals)
+- [ES2015](https://github.com/Coffee6ean/SpringBoard/tree/main/7.ES2015)
+- [How The Web Works](https://github.com/Coffee6ean/SpringBoard/tree/main/11.HowTheWebWorks)
+- [DOM](https://github.com/Coffee6ean/SpringBoard/tree/main/4.DOM)
+- [Markdown Tutorial](https://github.com/Coffee6ean/SpringBoard/tree/main/3.MarkdownTutorial)
+- [Object Oriented Programming](https://github.com/Coffee6ean/SpringBoard/tree/main/8.ObjectOrientedProgramming)
+- [Python Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/12.PythonFundamentals)
 
 ### 2. Module 2: Advanced Topics
-- [AdvancedArrayMethods](module-2/AdvancedArrayMethods)
-- [DeveloperFundamentals](module-2/DeveloperFundamentals)
-- [ES2015](module-2/ES2015)
-- [JasmineTesting](module-2/JasmineTesting)
-- [ObjectOrientedProgramming](module-2/ObjectOrientedProgramming)
+- [Advanced Array Methods](https://github.com/Coffee6ean/SpringBoard/tree/main/5.AdvancedArrayMethods)
+- [Developer Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/2.DeveloperFundamentals)
+- [ES2015](https://github.com/Coffee6ean/SpringBoard/tree/main/7.ES2015)
+- [Jasmine Testing](https://github.com/Coffee6ean/SpringBoard/tree/main/6.JasmineTesting)
+- [Object Oriented Programming](https://github.com/Coffee6ean/SpringBoard/tree/main/8.ObjectOrientedProgramming)
 
 ### 3. Module 3: Web Development
-- [How The Web Works](module-3/HowTheWebWorks)
-- [Intro To DOM](module-3/IntroToDOM)
-- [TwitterBootstrap](module-3/TwitterBootstrap)
+- [How The Web Works](https://github.com/Coffee6ean/SpringBoard/tree/main/11.HowTheWebWorks)
+- [Intro To DOM](https://github.com/Coffee6ean/SpringBoard/tree/main/4.DOM)
+- [TwitterBootstrap](https://github.com/Coffee6ean/SpringBoard/tree/main/10.TwitterBootstrap)
 - [Web Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/1.WebFundamentals)
-- [jQuery](module-3/jQuery)
+- [jQuery](https://github.com/Coffee6ean/SpringBoard/tree/main/9.jQuery)
 
 ### 4. Module 4: Backend Development
 - [Flask Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/13.FlaskFundamentals)
@@ -36,8 +35,8 @@ Welcome to the SpringBoard Bootcamp Repository! This repository serves as the ce
 - [Express Fundamentals](https://github.com/Coffee6ean/SpringBoard/tree/main/18.ExpressFundamentals)
 
 ### 5. Module 5: Exercises
-- [HatchwaysProjects](module-5/HatchwaysProjects) (if it involves a final project)
-- [SpringBoardExercises](module-5/SpringBoardExercises) (if they are part of the final project requirements)
+- [Hatchways Projects](module-5/HatchwaysProjects) (if it involves a final project)
+- [SpringBoard Exercises](module-5/SpringBoardExercises) (if they are part of the final project requirements)
 
 ## How to Use:
 
