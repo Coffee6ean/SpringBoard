@@ -7,7 +7,7 @@ CREATE DATABASE users_db;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    if SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name text NOT NULL,
     type text NOT NULL
 );
