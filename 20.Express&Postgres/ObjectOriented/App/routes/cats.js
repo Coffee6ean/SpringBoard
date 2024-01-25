@@ -35,7 +35,7 @@ router.post('/', async(req, res, next) => {
 router.delete('/:id', async(req, res, next) => {
     try{
         await Cat.delete(req.params.id);
-        return res.json({msg: `Deleted cat, id=${req.params.id}`});
+        return res.json({msg: `Deleted cat: ${req.params.name}`});
     } catch(err) {
         return next(err);
     }

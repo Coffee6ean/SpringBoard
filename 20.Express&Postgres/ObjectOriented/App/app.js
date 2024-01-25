@@ -2,7 +2,7 @@
 const express = require("express");
 const morgan = require('morgan');
 const catRoutes = require("./routes/cats");
-//const dogRoutes = require("./routes/dogs");
+const dogRoutes = require("./routes/dogs");
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 
 /* ROUTES */
 app.use("/cats", catRoutes);
-//app.use("/dogs", dogRoutes);
+app.use("/dogs", dogRoutes);
 
 /* ERROR */
 // 404 handler
