@@ -2,7 +2,7 @@ const {Client} = require('pg');
 
 let DB_URI = (process.env.NODE_ENV === 'test') 
     ? 'users_test_db' 
-    : 'users_db';
+    : 'express_pg_oo';
 
 const DB_PASSWORD = process.env.DB_PASSWORD;
 
