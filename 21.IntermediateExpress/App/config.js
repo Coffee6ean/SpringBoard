@@ -1,7 +1,7 @@
 /* Common Settings for Auth-api */
 const DB_URI = (process.env.NODE_ENV === 'test') 
-    ? 'express_auth_db' 
-    : 'express_auth_test_db';
+    ? 'express_auth_test_db' 
+    : 'express_auth_db';
 
 const SECRET_KEY = process.env.SECRET_KEY || 'thousandSunny17';
 
