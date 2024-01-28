@@ -4,7 +4,9 @@ const router = new express.Router();
 const ExpressError = require('../expressError');
 const db = require('../db');
 const bcrypt = require('bcrypt');
-const {BCRYPT_WORK_FACTOR} = require('../config');
+const jwt = require("jsonwebtoken");
+const { BCRYPT_WORK_FACTOR, SECRET_KEY } = require("../config");
+const {ensureLoggedIn, ensureAdmin} = require('../middleware/auth');
 
 router.get('/', (req, res, next) => {
     res.send('App is working');
@@ -47,7 +49,8 @@ router.post('/login', async(req, res, next) => {
         const user = result.rows[0];
         if(user) {
             if(await bcrypt.compare(password, user.password)) {
-                return res.json({message: `Logged in`});
+                const token = jwt.sign({username, type:'admin'}, SECRET_KEY);
+                return res.json({message: `Logged in`, token});
             }
         }
         throw new ExpressError('Invalid username/password', 400);
@@ -57,6 +60,22 @@ router.post('/login', async(req, res, next) => {
         }
         return next(err);
     }
-})
+});
+
+router.get('/topsecret', ensureLoggedIn, (req, res, next) => {
+    try {
+        return res.json({msg: 'Signed In. TOP SECRET'});
+    } catch(err) {
+        return next(new ExpressError('Please log in first', 401));
+    }
+});
+
+router.get('/private', ensureLoggedIn, (req, res, next) => {
+    res.json({msg: `Welcome to my VIP section, ${req.user.username}`});
+});
+
+router.get('/admin', ensureAdmin, (req, res, next) => {
+    res.json({msg: `Admin dashboard, welcome ${req.user.username}`});
+});
 
 module.exports = router;

@@ -3,19 +3,22 @@ const express = require('express');
 const morgan = require('morgan');
 const authRoutes = require('./routes/auth');
 const ExpressError = require('./expressError');
+const {authenticateJWT} = require('./middleware/auth');
 
 const app = express();
 
 /* MIDDLEWARE */
 app.use(express.json());
+app.use(authenticateJWT);
 app.use(morgan('dev'));
 
 /* ROUTES */
 app.use('/', authRoutes);
 
 // 404 handler
-app.use(function(req, res) {
-    return new ExpressError('Not Found', 404);
+app.use(function (req, res, next) {
+    const err = new ExpressError("Not found!", 404);
+    return next(err);
 });
 
 // generic error handler 
