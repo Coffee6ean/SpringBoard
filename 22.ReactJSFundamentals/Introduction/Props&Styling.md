@@ -4,7 +4,7 @@ Components can specify default values for missing props
 
 ### Demo: Hello-3
 _demo/hello-3/Hello.js_
-```js
+```jsx
 function Hello(props) {
   return <p>Hi {props.to} from {props.from}</p>;
 }
@@ -17,7 +17,7 @@ Hello.defaultProps = {
 Set properties on element; get using ***props.propName***.
 
 _demo/hello-3/index.js_
-```js
+```jsx
 ReactDOM.render(
   <div>
     <Hello to="Students" from="Elie" />
@@ -32,14 +32,14 @@ ReactDOM.render(
 You can add CSS classes in JSX.
 
 However: since ***class*** is a reserved keyword in JS, spell it ***className*** in JSX:
-```js
+```jsx
 function Message() {
   return <div className="urgent">Emergency!</div>
 }
 ```
 
 You can inline CSS styles, but now ***style*** takes a JS object:
-```js
+```jsx
 function Box(props) {
   const colors = {
     color: props.favoriteColor,

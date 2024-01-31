@@ -2,10 +2,10 @@
 
 ## Front End Frameworks:
 
-- Larger JS libraries
+- Larger js libraries
 - Provide “blueprint” for apps
 - “Opinionated”
-    - “This is how you should design a JS app”
+    - “This is how you should design a js app”
 - Often: provide for code re-use
 - Often: provide templating of HTML (like Jinja)
 
@@ -40,7 +40,7 @@ Developed by and sponsored by Facebook.
 - Functions that know how to render themselves into HTML
 
 _(a bit like this)_
-```js
+```jsx
 function Cat() {
   const name = "Fluffy";
 
@@ -75,7 +75,7 @@ _demo/hello/index.html_
 
 A component is a React class with a ***render*** method:
 _demo/hello/index.js_
-```js
+```jsx
 function Hello() {
   return <p>Hi Rithm!</p>
 }
@@ -83,7 +83,7 @@ function Hello() {
 
 We add our component to HTML with ***ReactDOM.render***:
 _demo/hello/index.js_
-```js
+```jsx
 ReactDOM.render(<Hello/>,
   document.getElementById("root"));
 ```

@@ -6,7 +6,7 @@ A function component can return either:
 - ***null*** (***undefined*** is not ok!)
 
 You can put whatever logic you want in your function for this:
-```js
+```jsx
 function Lottery(props) {
   if (props.winner)
     return <b>You win!</b>;
@@ -17,7 +17,7 @@ function Lottery(props) {
 
 ### Ternary
 It’s very common to use ternary operators:
-```js
+```jsx
 function Lottery(props) {
   return (
     <b>You {props.winner ? "win" : "lose"}!</b>
@@ -27,7 +27,7 @@ function Lottery(props) {
 
 ### Demo: Slots!
 _demo/slots/Machine.js_
-```js
+```jsx
 function Machine(props) {
   const { s1, s2, s3 } = props;
   const winner = s1 === s2 && s2 === s3;
@@ -42,7 +42,7 @@ function Machine(props) {
 ```
 
 _demo/slots/index.js_
-```js
+```jsx
 ReactDOM.render(
   <Machine s1="🍇" s2="🍇" s3="🍇" />,
   document.getElementById("root")
@@ -52,7 +52,7 @@ ReactDOM.render(
 ## Looping in JSX:
 
 It’s common to use ***array.map(fn)*** to output loops in JSX:
-```js
+```jsx
 function Messages() {
   const msgs = [
     {id: 1, text: "Greetings!"},
@@ -69,7 +69,7 @@ function Messages() {
 
 ### Demo: Friends!
 _demo/friends/Friend.js_
-```js
+```jsx
 function Friend(props) {
   const { name, hobbies } = props;
   return (
@@ -84,7 +84,7 @@ function Friend(props) {
 ```
 
 _demo/friends/index.js_
-```js
+```jsx
 ReactDOM.render(
   <div>
     <Friend name="Jessica" hobbies={["Tea", "Frisbee"]} />

@@ -1,7 +1,7 @@
 # JSX (JavaScript Syntax Extension) -
 
 _demo/hello/index.js_
-```js
+```jsx
 function Hello() {
   return <p>Hi Rithm!</p>
 }
@@ -13,14 +13,14 @@ ReactDOM.render(<Hello/>,
 What’s this HTML in our JavaScript?
 
 JSX is like HTML embedded in JavaScript:
-```js
+```jsx
 if (score > 100) {
   return <b>You win!</b>
 }
 ```
 
 You can also “re-embed” JavaScript in JSX:
-```js
+```jsx
 if (score > 100) {
   return <b>You win, { playerName }</b>
 }

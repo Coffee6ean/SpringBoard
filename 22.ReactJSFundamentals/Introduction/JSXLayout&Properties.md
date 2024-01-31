@@ -2,7 +2,7 @@
 
 Our demo had ***Hello*** component in same ***index.js*** as placement code:
 _demo/hello/index.js_
-```js
+```jsx
 function Hello() {
   return <p>Hi Rithm!</p>
 }
@@ -14,7 +14,7 @@ ReactDOM.render(<Hello/>,
 You’ll often have >1 component, it’s good to keep in separate files.
 
 _index.js_
-```js
+```jsx
 ReactDOM.render(<Hello/>,
   document.getElementById("root"));
 ```
@@ -27,7 +27,7 @@ It’s conventional for the top-level component to be named ***App***.
 This renders the other components:
 
 _App.js_
-```js
+```jsx
 function App() {
   return (
     <div>
@@ -70,13 +70,13 @@ It would be better if we could *configure* our greeting.
 Our greeting will be *Hi ______ from ______*.
 
 Let’s make two “properties”:
--**to**: Who we are greeting
--**from**: Who our greeting is from
+- **to**: Who we are greeting
+- **from**: Who our greeting is from
 
 ### Demo: Hello-2
 
 _demo/hello-2/index.js_
-```js
+```jsx
 ReactDOM.render(
   <Hello to="me" from="you" />,
   document.getElementById("root")
@@ -86,7 +86,7 @@ ReactDOM.render(
 Set properties on element; get using ***props.propName***, where ***props*** is the first argument to our component function.
 
 _demo/hello-2/Hello.js_
-```js
+```jsx
 function Hello(props) {
   return (
     <div>
@@ -103,7 +103,7 @@ function Hello(props) {
 You can use a component many times:
 
 _index.js_
-```js
+```jsx
 ReactDOM.render(
   <div>
     <Hello to="Kay" from="Kim" />
@@ -126,12 +126,12 @@ Prior to React 16, every component had to render a single top-level element. In 
 - Properties are for *configuring* your component
 - Properties are immutable
 - Properties can be strings:
-```js
+```jsx
 <User name="Jane" title="CEO" />
 ```
 
 - For other types, embed JS expression using the curly braces:
-```js
+```jsx
 <User name="Jane" salary={ 100000 }
     hobbies={ ["bridge", "reading", "tea"] } />
 ```
