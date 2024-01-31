@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const nunjucks = require('nunjucks');
+const cookieParser = require('cookie-parser');
 
-/* STATIC FOLDERS */
+/* MIDDLEWARE */
+//Static Folders
 app.use(express.static('public'));
 app.use('/js', express.static('js'));
+//Parser
+app.use(cookieParser());
 
 /* VIEWS FOLDER */
 app.set('view engine', 'html');
@@ -23,6 +27,11 @@ app.get('/', (req, res, next) => {
 app.get('/dogs/:name', (req, res, next) => {
     res.render('dog', {name: req.params.name});
 });
+
+app.get('/showcookies', (req, res, next) => {
+    res.cookie('isLoggedIn', 'definitely');
+    res.send(req.cookies);
+})
 
 /* SERVER */
 app.listen(3000, () => {
