@@ -1,4 +1,4 @@
-# JSX -
+# JSX (JavaScript Syntax Extension) -
 
 _demo/hello/index.js_
 ```js
