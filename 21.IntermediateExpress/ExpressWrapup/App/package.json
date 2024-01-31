@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "nodemon -e html,css,js,json app.js",
+    "debug": "nodemon --inspect app.js"
   },
   "author": "Coffee_6ean",
   "license": "ISC",

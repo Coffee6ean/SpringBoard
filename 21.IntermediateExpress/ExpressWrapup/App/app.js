@@ -25,6 +25,7 @@ app.get('/', (req, res, next) => {
 });
 
 app.get('/dogs/:name', (req, res, next) => {
+    //debugger;
     res.render('dog', {name: req.params.name});
 });
 
