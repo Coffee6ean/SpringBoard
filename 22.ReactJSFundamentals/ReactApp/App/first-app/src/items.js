@@ -21,7 +21,7 @@ const items = [
         img: 'https://images-na.ssl-images-amazon.com/images/I/81TUydqv5lL._AC_UL220_SR124,220_.jpg'
     },
     {
-        id: 3,
+        id: 4,
         name: '60 Tooth Fine Saw Blade',
         price: 34.99,
         quantity: 2,

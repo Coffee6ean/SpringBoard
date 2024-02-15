@@ -7,6 +7,7 @@ import ShoppingCart from './ShoppingCart';
 import fakeLogo from './fakeLogo.svg'
 import Alert from './Alert';
 import './App.css';
+import Greeting from './Greetings';
 
 function App() {
   /*
@@ -19,11 +20,12 @@ function App() {
     <div>
       <Alert variant='success'>
         <h1>Welcome Back</h1>
+        <Greeting/>
       </Alert>
       <Alert variant='danger'>
         <h1>Oh No!</h1>
       </Alert>
-      <img src={fakeLogo} id='logo'/>
+      <img src={fakeLogo} id='logo' alt='logo'/>
       <ShoppingCart items={items} username='Carly'/>
       <ShoppingCart items={moreItems} username='Rusty'/>
     </div>
