@@ -1,4 +1,5 @@
 import Clicker from './Clicker';
+import Counter from './Counter';
 import ButtonGroup from './ButtonGroup';
 import './App.css';
 
@@ -6,12 +7,16 @@ function App() {
   return (
     <div className="App">
       <h1>Test-1</h1>
-      <ButtonGroup/>
+      <Counter/>
       {/*
-        <Clicker/>
-        <Clicker/>
-        <Clicker/>
+        <ButtonGroup/>
+        {
+          <Clicker/>
+          <Clicker/>
+          <Clicker/>
+        }
       */}
+      
     </div>
   );
 }
