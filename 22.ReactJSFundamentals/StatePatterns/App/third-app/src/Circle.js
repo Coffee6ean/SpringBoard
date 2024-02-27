@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import "./style/Circle.css";
 
-const Circle = (props) => {
+const Circle = ({color, idx, x, y, changePosition}) => {
     return(
-        <div className="Circle" style={{backgroundColor: props.color}}>
-            {props.idx + 1}
+        <div onClick={() => changePosition(idx)} className="Circle" style={{backgroundColor: color, position:'absolute', top: `${y}vh`, left:`${x}vw`}}>
+            {idx + 1}
         </div>
     )
 }

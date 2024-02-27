@@ -1,8 +1,14 @@
 import React, {useState} from "react";
 import Circle from "./Circle";
+import ColorButtons from "./ColorButtons";
+import './style/ColorButtons.css';
+
+function getRandom(min = 0, max = 100) {
+    return Math.random() * (max-min) + min;
+}
 
 const ColoredCircles = () => {
-    const [circles, setCircles] = useState(['indigo', 'peachpuff', 'lavender', 'cornflowerblue']);
+    const [circles, setCircles] = useState([]);
     /*
     const addCircle = () => {
         setCircles(circles => {
@@ -12,16 +18,45 @@ const ColoredCircles = () => {
         })
     }
     */
-   const addCircle = () => {
-    setCircles(circles => [...circles, 'magenta']);
-   }
 
-    return(
+    const addCircle = (color) => {
+        setCircles(circles => [...circles, {color, x: getRandom(), y: getRandom()}]);
+    }
+
+    /*
+    const changePosition = (idx) => {
+        setCircles(circles => {
+            const copy = [...circles];
+            copy[idx].x = getRandom();
+            copy[idx].y = getRandom();
+            return copy;
+        })
+    }
+    */
+
+    const changePosition = (idx) => {
+        setCircles(circles => {
+            if (!circles) {
+                return []; // Initialize circles if it's undefined
+            }
+            
+            return circles.map((circle, i) => (
+                i === idx 
+                    ? {...circle, x: getRandom(), y: getRandom()}
+                    : circle
+            ));
+        });
+    }
+    
+
+    return (
         <div>
-            {circles.map((color, idx) => (
-                <Circle color={color} idx={idx} key={idx}/>
+            <ColorButtons addCircle={addCircle} options={['lightsteelblue', 'paleturquoise']}/>
+            <ColorButtons addCircle={addCircle} options={['orange', 'magenta', 'teal']}/>
+            {circles.map(({color, x, y}, idx) => (
+                <Circle changePosition={changePosition} color={color} idx={idx} key={idx} x={x} y={y}/>
             ))}
-            <button onClick={addCircle}>Add</button>
+            {/* <button onClick={() => addCircle('magenta')}>Add</button> */}
         </div>
     )
 }
