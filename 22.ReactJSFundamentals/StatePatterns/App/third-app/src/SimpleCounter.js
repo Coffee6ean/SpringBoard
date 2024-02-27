@@ -10,6 +10,7 @@ function SimpleCounter() {
         const [num2, setNum2] = useState(0);
     }
     */
+    
     console.log("Running again! Num is:", num);
 
     const clickUp = () => {
