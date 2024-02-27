@@ -36,7 +36,7 @@ function PositionedColorfulCircles() {
       // return circlesCopy;
       return circlesCopy;
     });
-  // end
+  // endcle
 
   return (
     <div>

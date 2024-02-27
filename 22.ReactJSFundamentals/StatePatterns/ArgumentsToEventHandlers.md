@@ -44,8 +44,7 @@ function NumberItemAlt(props) {
 }
 ```
 
-### **More detail**
-
+### More detail
 - Using arrow functions in the parent simplifies the child
 - However, there are performance considerations
 - We will favor the pattern in ***NumberList*** over the pattern in ***NumberListAlt***
