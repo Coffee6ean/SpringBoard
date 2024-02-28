@@ -7,7 +7,7 @@ const Timer = () => {
         setSeconds(seconds => seconds + 1)
     }, 1000);
 
-    axios.get('').then(setPokemon());
+    //axios.get('').then(setPokemon());
     return <h1>{seconds}</h1>
 }
 
