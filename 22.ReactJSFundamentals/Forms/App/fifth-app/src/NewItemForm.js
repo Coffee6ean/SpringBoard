@@ -17,7 +17,8 @@ const NewItemForm = ({addItem}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addItem('LOL', 8);
+        addItem({...formData});
+        setFormData(INITIAL_STATE);
     }
 
     return (
@@ -35,10 +36,11 @@ const NewItemForm = ({addItem}) => {
             <label htmlFor='qty'>Quantity</label>
             <input 
                 id='qty'
-                type='text' 
+                type='range' 
                 name='qty' 
-                placeholder='Quantity' 
-                value={formData.qty} 
+                min='1' 
+                max='10' 
+                value={formData.qty}
                 onChange={handleChange}
             />
             <p>{formData.name}</p>
