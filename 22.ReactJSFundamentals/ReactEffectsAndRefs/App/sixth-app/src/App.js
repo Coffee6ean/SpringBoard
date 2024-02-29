@@ -5,6 +5,7 @@ import TimerWrapper from './TimerWrapper';
 import Counter from './Counter';
 import ProfileViewer from './ProfileViewer';
 import ProfileViewerWithSearch from './ProfileViewerWithSearch';
+import Video from './Video';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Counter/> */}
       {/* <ProfileViewer name='Coffee6ean' color='orange'/> */}
       {/* <ProfileViewerWithSearch/> */}
-      <TimerWrapper/>
+      {/* <TimerWrapper/> */}
+      <Video/>
     </div>
   );
 }
