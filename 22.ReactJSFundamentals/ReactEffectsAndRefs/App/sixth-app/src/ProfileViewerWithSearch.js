@@ -7,6 +7,7 @@ const ProfileViewerWithSearch = () => {
     const [profile, setProfile] = useState(null);
     const [url, setUrl] = useState(`https://api.github.com/users/Coffee6ean`);
 
+    /*
     const search = (term) => {
         setUrl(`https://api.github.com/users/${term}`);
 
@@ -16,16 +17,21 @@ const ProfileViewerWithSearch = () => {
         }
         loadProfile();
     };
+    */
 
-    /*
+    const search = (term) => {
+        setUrl(`https://api.github.com/users/${term}`)
+    }
+
     useEffect(() => {
+        console.log('Loading Data');
         async function loadProfile() {
             const res = await axios.get(url);
             setProfile(res.data);
         }
         loadProfile();
+        return () => console.log('Cleaning Up');
     }, [url]);
-    */
 
     return (
         <div>

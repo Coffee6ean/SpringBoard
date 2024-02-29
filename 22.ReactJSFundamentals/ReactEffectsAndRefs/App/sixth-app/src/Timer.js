@@ -5,9 +5,15 @@ const Timer = () => {
     console.log('Re-Rendering', seconds);
     // useEffect
     useEffect(() => {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setSeconds(seconds => seconds + 1);
         }, 1000);
+
+        return () => {
+            console.log('Clean Up Function');
+            console.log(intervalId);
+            clearInterval(intervalId);
+        }
     }, []);
 
     // useState
