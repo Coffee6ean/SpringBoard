@@ -1,11 +1,10 @@
 import React, {useState, useEffect, useRef} from "react";
-let intervalId;
 
 const Timer2 = () => {
     const [seconds, setSeconds] = useState(0);
     const timerId = useRef();
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        timerId.current = setInterval(() => {
             setSeconds(seconds => seconds + 1);
         }, 1000)
 
@@ -25,3 +24,5 @@ const Timer2 = () => {
         </div>
     )
 }
+
+export default Timer2;
