@@ -1,4 +1,4 @@
-# Javascript Types
+# Javascript Types - 
 
 ### Map
 - Built-in type for mapping

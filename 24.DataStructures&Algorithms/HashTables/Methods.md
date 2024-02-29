@@ -1,4 +1,4 @@
-# Common Hash Methods
+# Common Hash Methods - 
 
 ### Runtime of Hash
 

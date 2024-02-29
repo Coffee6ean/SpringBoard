@@ -1,4 +1,4 @@
-# Hash Tables
+# Hash Tables - 
 
 ```js
 let fruits = {"apple": "red",
