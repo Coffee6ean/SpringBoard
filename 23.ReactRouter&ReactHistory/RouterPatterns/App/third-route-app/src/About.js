@@ -6,7 +6,8 @@ function About() {
     return (
         <div>
             <BaseGreetings name={val}/>
-        </div>
+            <span><b>This is the about page.</b></span>
+        </div>  
     );
 }
 
