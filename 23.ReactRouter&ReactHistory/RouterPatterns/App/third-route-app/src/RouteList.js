@@ -6,6 +6,7 @@ import AdminPage from "./AdminPage";
 import Post from "./Post";
 import BlogHome from "./BlogHome";
 import Home from "./Home";
+import NotFound from "./NotFound";
 
 function RoutesList() {
     return (
@@ -16,7 +17,8 @@ function RoutesList() {
             <Route path="/blog/:slug" element={<Post/>}/>
             <Route path="/blog" element={<BlogHome/>}/>
             <Route path="/" element={<Home/>}/>
-            <Route path="/*" element={<Navigate to="/"/>}/>
+            {/* <Route path="/*" element={<Navigate to="/"/>}/> */}
+            <Route path="/*" element={<NotFound/>}/>
         </Routes>
     );
 }

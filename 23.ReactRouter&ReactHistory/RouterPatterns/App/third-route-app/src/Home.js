@@ -6,6 +6,8 @@ function Home() {
     return(
         <div>
             <BaseGreetings name={val}/>
+            <span><b>Welcome to the site!</b></span>
+            <p>Click on links above to explore</p>
         </div>
     );
 }
