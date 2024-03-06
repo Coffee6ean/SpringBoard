@@ -1,6 +1,8 @@
 import React from "react";
 
 class CounterClassBased extends React.Component {
+    static defaultProps = {color: 'orange'}
+
     constructor(props) {
         super(props);
         this.state = {count: 0, isHiding: false}

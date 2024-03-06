@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       {/* <Counter/> */}
-      <CounterClassBased/>
+      <CounterClassBased color='purple' initialVal={10}/>
+      <CounterClassBased initialVal={10}/>
     </div>
   );
 }
