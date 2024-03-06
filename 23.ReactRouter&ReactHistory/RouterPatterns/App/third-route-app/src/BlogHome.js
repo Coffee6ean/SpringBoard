@@ -1,5 +1,4 @@
 import React from "react";
-import {useParams} from "react-router-dom";
 import BaseGreetings from "./BaseGreetings";
 
 function BlogHome() {
