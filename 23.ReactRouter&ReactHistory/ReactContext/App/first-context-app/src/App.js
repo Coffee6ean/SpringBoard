@@ -1,6 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
-import Child from './Family/Child';
+//import Child from './Family/Child';
+import Child from './FamilyContext/Child';
 
 function App() {
   return (
