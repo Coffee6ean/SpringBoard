@@ -5,6 +5,7 @@ import CounterMixin from "./CounterMixin";
 import EggCounter from "./EggCounter";
 import CounterUsingHOC from "./HOC/CounterUsingHOC";
 import ThingCounter from "./HOC/ThingCounter";
+import CounterRenderProps from "./RenderProps/CounterRenderProps";
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
         <hr/>
         <EggCounter/>
       */}
-      <CounterUsingHOC color='pink'/>
-      <ThingCounter/>
+      {/* 
+        <CounterUsingHOC color='pink'/>
+        <ThingCounter/>
+      */}
+      <CounterRenderProps/>
     </div>
   );
 }
