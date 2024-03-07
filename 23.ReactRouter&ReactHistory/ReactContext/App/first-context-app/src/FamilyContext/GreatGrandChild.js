@@ -3,12 +3,12 @@ import CountContext from "./CountContext";
 import GreatGreatGrandChild from "./GreatGreatGrandChild";
 
 function GreatGrandChild() {
-    const count = useContext(CountContext);
+    const {count, increment} = useContext(CountContext);
     return (
         <div style={{border:'4px solid #7FDBFF', margin:'1rem'}}>
             <p>I'm the great-grandchild!</p>
             <p>Count is: {count}</p>
-            {/* <button onClick={addProp}>Increment Count</button> */}
+            <button onClick={increment}>Increment Count</button>
             <GreatGreatGrandChild/>
         </div>
     );
