@@ -6,6 +6,7 @@ import EggCounter from "./EggCounter";
 import CounterUsingHOC from "./HOC/CounterUsingHOC";
 import ThingCounter from "./HOC/ThingCounter";
 import CounterRenderProps from "./RenderProps/CounterRenderProps";
+import CounterHook from "./Hooks/CounterHook";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <CounterUsingHOC color='pink'/>
         <ThingCounter/>
       */}
-      <CounterRenderProps/>
+      {/* <CounterRenderProps/> */}
+      <CounterHook/>
     </div>
   );
 }
