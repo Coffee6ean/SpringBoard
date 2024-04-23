@@ -35,6 +35,7 @@ class FriendGraph {
         let seen = new Set(toVisitQueue);
         while(toVisitQueue.length) {
             let currentPerson = toVisitQueue.shift();
+            console.log("BFS Visiting:", currentPerson.name);
 
             if(currentPerson === person2) return true;
 
